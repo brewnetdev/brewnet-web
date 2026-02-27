@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="container">
         <div className="footer-inner">
           <div className="footer-brand">
-            <span className="nav-logo-icon">{"\u25C6"}</span> Brewnet
+            <span className="footer-logo-text">Brewnet</span>
             <span className="footer-copy">
               {"\u00A9"} 2025-2026 Brewnet (codevillain). All rights reserved.
             </span>
@@ -29,7 +29,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener"
             >
-              License (BUSL-1.1)
+              License (MIT)
             </a>
             <a href="#">Privacy</a>
           </div>

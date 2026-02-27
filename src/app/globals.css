@@ -118,16 +118,16 @@ img { max-width: 100%; display: block; }
 }
 .nav-logo {
   font-family: var(--font-mono);
-  font-weight: 700;
-  font-size: 18px;
+  font-weight: 800;
+  font-size: 20px;
   color: var(--text-heading);
+  letter-spacing: -0.02em;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 .nav-logo-icon {
   color: var(--primary);
-  font-size: 20px;
 }
 .nav-links {
   display: flex;
@@ -238,11 +238,16 @@ img { max-width: 100%; display: block; }
   margin-bottom: 24px;
 }
 .hero-title {
-  font-size: clamp(36px, 7vw, 64px);
+  font-size: clamp(24px, 3vw, 36px);
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 20px;
   color: var(--text-heading);
+}
+.hero-title .gradient-text {
+  font-size: clamp(40px, 6vw, 60px);
+  display: block;
+  margin-top: 8px;
 }
 .hero-desc {
   font-size: 18px;
@@ -260,7 +265,9 @@ img { max-width: 100%; display: block; }
 
 /* Terminal Preview */
 .hero-terminal {
+  position: relative;
   max-width: 680px;
+  height: 360px;
   margin: 0 auto;
   background: var(--bg-surface);
   border: 1px solid var(--border);
@@ -269,7 +276,20 @@ img { max-width: 100%; display: block; }
   box-shadow: var(--shadow-lg);
   text-align: left;
 }
+.hero-terminal::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 70%;
+  height: 78%;
+  background: url("/images/brewnet-art.svg") right bottom / contain no-repeat;
+  opacity: 0.5; /* 터미널 배경이미지 투명도 — 여기서 조절 */
+  pointer-events: none;
+}
 .terminal-bar {
+  position: relative;
+  z-index: 1;
   background: var(--bg-card);
   border-bottom: 1px solid var(--border);
   padding: 10px 16px;
@@ -292,10 +312,11 @@ img { max-width: 100%; display: block; }
   margin-left: 8px;
 }
 .terminal-body {
+  position: relative;
+  z-index: 1;
   padding: 20px 24px;
   font-family: var(--font-mono);
   font-size: 14px;
-  min-height: 220px;
 }
 .term-line {
   display: flex;
@@ -386,12 +407,26 @@ img { max-width: 100%; display: block; }
   color: var(--text-heading);
   margin-bottom: 8px;
 }
+.feature-card h3 .pro-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #f0883e, #f85149);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-left: 8px;
+  vertical-align: middle;
+  letter-spacing: 0.03em;
+}
+.feature-card-pro {
+  border-color: rgba(248, 81, 73, 0.3);
+}
 .feature-card p {
   font-size: 14px;
   color: var(--text-muted);
   line-height: 1.6;
 }
-
 /* ─── How It Works ─── */
 .how-it-works {
   padding: 100px 0;
@@ -692,11 +727,12 @@ img { max-width: 100%; display: block; }
   padding: 20px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
-  transition: border-color 0.2s, background 0.2s;
+  transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;
 }
 .contact-item:hover {
-  border-color: var(--border-light);
+  border-color: var(--primary);
   background: var(--bg-hover);
+  box-shadow: 0 0 16px rgba(88, 166, 255, 0.15);
 }
 .contact-item svg {
   flex-shrink: 0;
@@ -762,6 +798,9 @@ img { max-width: 100%; display: block; }
 }
 .contact-form .form-submit {
   margin-top: 16px;
+}
+.contact-form .form-submit .btn {
+  padding: 14px 28px;
 }
 .contact-form .form-message {
   text-align: center;
@@ -836,6 +875,13 @@ img { max-width: 100%; display: block; }
   align-items: center;
   gap: 8px;
 }
+.footer-logo-text {
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--text-heading);
+  letter-spacing: -0.02em;
+}
 .footer-copy {
   font-family: var(--font-sans);
   font-weight: 400;
@@ -888,6 +934,148 @@ img { max-width: 100%; display: block; }
   margin-top: 2px;
 }
 
+/* ─── Pain Points ─── */
+.pain-points {
+  padding: 100px 0;
+  background: var(--bg-surface);
+}
+.pain-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.pain-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  text-align: center;
+}
+.pain-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(248, 81, 73, 0.12);
+  color: var(--red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+.pain-card h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 8px;
+}
+.pain-card p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ─── FAQ ─── */
+.faq {
+  padding: 100px 0;
+  background: var(--bg-surface);
+}
+.faq-list {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+.faq-item.open {
+  border-color: var(--border-light);
+}
+.faq-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  background: none;
+  border: none;
+  color: var(--text-heading);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  gap: 16px;
+}
+.faq-toggle:hover {
+  color: var(--primary);
+}
+.faq-toggle svg {
+  flex-shrink: 0;
+  color: var(--text-muted);
+  transition: transform 0.2s;
+}
+.faq-item.open .faq-toggle svg {
+  transform: rotate(45deg);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+.faq-item.open .faq-answer {
+  max-height: 300px;
+}
+.faq-answer p {
+  padding: 0 24px 20px;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ─── Final CTA ─── */
+.final-cta {
+  padding: 100px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.final-cta::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(88,166,255,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.final-cta h2 {
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 800;
+  color: var(--text-heading);
+  margin-bottom: 16px;
+}
+.final-cta .section-desc {
+  margin-bottom: 32px;
+}
+.final-cta-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.final-cta-note {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
 /* ─── Scroll margin for fixed nav ─── */
 [id] {
   scroll-margin-top: 80px;
@@ -897,7 +1085,8 @@ img { max-width: 100%; display: block; }
 @media (max-width: 1024px) {
   .features-grid,
   .pricing-grid,
-  .services-grid {
+  .services-grid,
+  .pain-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .commands-grid {
@@ -927,7 +1116,7 @@ img { max-width: 100%; display: block; }
 
   .hero { padding: 120px 0 60px; }
   .hero-actions { flex-direction: column; align-items: center; }
-  .hero-terminal { margin: 0 -8px; }
+  .hero-terminal { max-width: 100%; height: auto; margin: 0 -8px; }
 
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -937,8 +1126,13 @@ img { max-width: 100%; display: block; }
   .features-grid,
   .steps-grid,
   .services-grid,
-  .pricing-grid {
+  .pricing-grid,
+  .pain-grid {
     grid-template-columns: 1fr;
+  }
+  .final-cta-actions {
+    flex-direction: column;
+    align-items: center;
   }
   .commands-grid {
     grid-template-columns: 1fr;

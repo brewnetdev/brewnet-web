@@ -2,7 +2,7 @@ export default function Stats() {
   const stats = [
     { value: "17", label: "Docker Services" },
     { value: "7", label: "Backend Languages" },
-    { value: "8", label: "Wizard Steps (0-7)" },
+    { value: "7", label: "Wizard Steps" },
     { value: "100%", label: "Open Source CLI" },
   ];
 

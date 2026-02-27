@@ -12,7 +12,7 @@ export default function HowItWorks() {
     {
       number: "02",
       title: "Run the Wizard",
-      desc: "The interactive 8-step wizard (Steps 0-7) walks you through: system check, project setup, admin account & server components, dev stack & runtime, domain & network, review, generation, and completion.",
+      desc: "The interactive 7-step wizard walks you through: system check, project setup, admin account & server components, dev stack & runtime, domain & network, review, and generation & deployment.",
       code: "brewnet init",
     },
     {

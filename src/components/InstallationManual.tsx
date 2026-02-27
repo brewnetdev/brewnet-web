@@ -127,11 +127,11 @@ export default function InstallationManual() {
 
         {/* Wizard Overview */}
         <div className="commands-section" style={{ marginBottom: 32 }}>
-          <h3 className="commands-title">8-Step Wizard Overview</h3>
+          <h3 className="commands-title">7-Step Wizard Overview</h3>
           <div className="wizard-steps">
             {wizardSteps.map((ws) => (
               <div className="wizard-step" key={ws.step}>
-                <div className="wizard-step-num">S{ws.step}</div>
+                <div className="wizard-step-num">{ws.step}</div>
                 <div>
                   <div className="wizard-step-title">{ws.title}</div>
                   <div className="wizard-step-desc">{ws.description}</div>
