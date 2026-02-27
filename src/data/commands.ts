@@ -1,0 +1,16 @@
+export const cliCommands = [
+  { command: "brewnet init", description: "Interactive setup wizard" },
+  { command: "brewnet add <service>", description: "Add a service" },
+  { command: "brewnet remove <service>", description: "Remove a service" },
+  { command: "brewnet up / down", description: "Start / Stop all services" },
+  { command: "brewnet status", description: "Show service status" },
+  { command: "brewnet logs [service]", description: "View logs" },
+  { command: "brewnet deploy <path>", description: "Deploy an application" },
+  { command: "brewnet domain add", description: "Add custom domain" },
+  { command: "brewnet domain tunnel", description: "Manage Cloudflare Tunnel" },
+  { command: "brewnet backup", description: "Create backup" },
+  { command: "brewnet restore <id>", description: "Restore from backup" },
+  { command: "brewnet ssh enable", description: "Enable SSH server" },
+  { command: "brewnet create-app <name>", description: "Scaffold a new app" },
+  { command: "brewnet uninstall", description: "Remove all services & data" },
+];
