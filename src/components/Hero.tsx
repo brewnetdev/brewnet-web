@@ -12,11 +12,25 @@ export default function Hero() {
           <br />
           <span className="gradient-text">Just brew it!</span>
         </h1>
-        <p className="hero-desc">
-          Interactive 8-step CLI wizard and Web Dashboard for setting up and
-          managing personal servers with 17 Docker-based services. From zero to
-          a fully configured server in minutes.
-        </p>
+        <div className="hero-split">
+          <p className="hero-desc">
+            Interactive 7-step CLI wizard and Web Dashboard for setting up and
+            managing personal servers with 17 Docker-based services. Build your
+            own home server, skip the hosting fees, and own your data. From zero
+            to a fully configured server in minutes — no cloud subscription required.
+          </p>
+          <ul className="hero-stack-list">
+            <li><span className="stack-dot green" />Git Server (Gitea)</li>
+            <li><span className="stack-dot blue" />Web Server (Nginx / Traefik)</li>
+            <li><span className="stack-dot purple" />Media Server (Jellyfin)</li>
+            <li><span className="stack-dot orange" />Runtime Stack (Go, Java, PHP, .NET, Python)</li>
+            <li><span className="stack-dot cyan" />Database (PostgreSQL, Redis)</li>
+            <li><span className="stack-dot yellow" />Cloud Storage (Nextcloud)</li>
+            <li><span className="stack-dot red" />Monitoring (Grafana, Prometheus)</li>
+            <li><span className="stack-dot green" />CI/CD Pipeline</li>
+            <li className="stack-more">+ 9 more services</li>
+          </ul>
+        </div>
         <div className="hero-actions">
           <a href="#system-requirements" className="btn btn-primary btn-lg">
             Get Started Free
