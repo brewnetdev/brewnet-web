@@ -8,9 +8,9 @@ export default function Hero() {
           Open Source {"\u00B7"} Self-Hosted {"\u00B7"} Docker-Powered
         </div>
         <h1 className="hero-title">
-          Your Home Server,
+          Your server on tap.
           <br />
-          <span className="gradient-text">Brewed Fresh</span>
+          <span className="gradient-text">Just brew it.</span>
         </h1>
         <p className="hero-desc">
           Interactive 8-step CLI wizard and Web Dashboard for setting up and
