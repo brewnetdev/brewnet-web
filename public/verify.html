@@ -49,9 +49,11 @@ img { max-width: 100%; display: block; }
 .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10, 10, 11, 0.8); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid transparent; transition: border-color 0.3s; }
 .nav.scrolled { border-bottom-color: var(--border); }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-.nav-logo { font-family: var(--font-mono); font-weight: 800; font-size: 20px; color: var(--text-heading); letter-spacing: -0.02em; display: flex; align-items: center; gap: 6px; }
-.nav-logo-icon { color: var(--primary); }
-.footer-logo-text { font-family: var(--font-mono); font-weight: 800; font-size: 16px; color: var(--text-heading); letter-spacing: -0.02em; }
+.nav-logo { color: #f5a623; display: flex; align-items: center; gap: 8px; }
+.nav-logo-icon { color: #f5a623; }
+.nav-logo-text { display: flex; flex-direction: column; font-family: var(--font-mono); font-weight: 800; font-size: 24px; letter-spacing: -0.02em; line-height: 1; }
+.nav-logo-tagline { display: block; font-family: var(--font-sans); font-size: 10px; font-weight: 400; color: #ffffff; letter-spacing: 0.02em; margin-top: 2px; }
+.footer-logo-text { display: flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-weight: 800; font-size: 16px; color: #f5a623; letter-spacing: -0.02em; }
 .nav-links { display: flex; gap: 32px; }
 .nav-links a { font-size: 14px; color: var(--text-muted); font-weight: 500; transition: color 0.2s; }
 .nav-links a:hover { color: var(--text-heading); }
@@ -252,8 +254,8 @@ img { max-width: 100%; display: block; }
 <nav class="nav" id="nav">
   <div class="container nav-inner">
     <a href="#" class="nav-logo" onclick="event.preventDefault();window.scrollTo({top:0,behavior:'smooth'})">
-      <svg class="nav-logo-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0114.08 0"/><path d="M1.42 9a16 16 0 0121.16 0"/><path d="M8.53 16.11a6 6 0 016.95 0"/><circle cx="12" cy="20" r="1" fill="currentColor" stroke="none"/></svg>
-      Brewnet
+      <svg class="nav-logo-icon" width="50" height="50" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M8 26H32V34C32 36.8 29.8 39 27 39H13C10.2 39 8 36.8 8 34V26Z" stroke-width="3.2" fill="none"/><path d="M32 28.5C35.5 28.5 37 30.5 37 32.5C37 34.5 35.5 36.5 32 36.5" stroke-width="3.2" fill="none"/><path d="M5 41H35" stroke-width="3.2"/><circle cx="20" cy="30" r="1.8" fill="currentColor" stroke="none"/><path d="M16.5 20a5 5 0 0 1 7 0" stroke-width="3" fill="none"/><path d="M13.5 15.5a10 10 0 0 1 13 0" stroke-width="3" fill="none"/><path d="M10.5 11a15 15 0 0 1 19 0" stroke-width="3" fill="none"/></svg>
+      <span class="nav-logo-text">Brewnet<span class="nav-logo-tagline">Your server on tap. Just brew it.</span></span>
     </a>
     <div class="nav-links" id="navLinks">
       <a href="#features">Features</a>
@@ -738,7 +740,7 @@ img { max-width: 100%; display: block; }
   <div class="container">
     <div class="footer-inner">
       <div class="footer-brand">
-        <span class="footer-logo-text">Brewnet</span>
+        <span class="footer-logo-text"><svg class="footer-logo-icon" width="16" height="16" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M8 26H32V34C32 36.8 29.8 39 27 39H13C10.2 39 8 36.8 8 34V26Z" stroke-width="3.2" fill="none"/><path d="M32 28.5C35.5 28.5 37 30.5 37 32.5C37 34.5 35.5 36.5 32 36.5" stroke-width="3.2" fill="none"/><path d="M5 41H35" stroke-width="3.2"/><circle cx="20" cy="30" r="1.8" fill="currentColor" stroke="none"/><path d="M16.5 20a5 5 0 0 1 7 0" stroke-width="3" fill="none"/><path d="M13.5 15.5a10 10 0 0 1 13 0" stroke-width="3" fill="none"/><path d="M10.5 11a15 15 0 0 1 19 0" stroke-width="3" fill="none"/></svg>Brewnet</span>
         <span class="footer-copy">&copy; 2025-2026 Brewnet (codevillain). All rights reserved.</span>
       </div>
       <div class="footer-links">
