@@ -35,8 +35,7 @@ export default function FinalCTA() {
           </a>
         </div>
         <p className="final-cta-note">
-          Free &amp; open source forever. Cancel anytime. Your data stays on
-          your machine.
+          Brewnet is MIT-licensed and supports clean uninstallation. Use it freely, and remove it completely when you no longer need it — no traces left behind.
         </p>
       </div>
     </section>
