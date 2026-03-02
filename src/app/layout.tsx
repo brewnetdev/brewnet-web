@@ -20,6 +20,13 @@ export const metadata: Metadata = {
   title: "Brewnet — Your Home Server, Brewed Fresh",
   description:
     "Self-hosted home server management platform. Interactive 8-step CLI wizard and Web Dashboard for setting up and managing personal servers with 17 Docker-based services.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/apple-icon.png",
+  },
 };
 
 export default function RootLayout({
