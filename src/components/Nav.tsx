@@ -38,6 +38,7 @@ export default function Nav() {
     { href: "#services", label: "Services" },
     { href: "#install-guide", label: "Install" },
     // { href: "#pricing", label: "Pricing" },
+    { href: "#faq", label: "FAQ" },
     { href: "#contact", label: "Contact" },
   ];
 

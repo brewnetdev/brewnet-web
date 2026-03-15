@@ -66,7 +66,7 @@ img { max-width: 100%; display: block; }
 /* ─── Section Common ─── */
 .section-header {
   text-align: center;
-  margin-bottom: 56px;
+  margin-bottom: 40px;
 }
 .section-badge {
   display: inline-block;
@@ -224,7 +224,7 @@ img { max-width: 100%; display: block; }
 
 /* ─── Hero ─── */
 .hero {
-  padding: 140px 0 80px;
+  padding: 100px 0 48px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -342,7 +342,7 @@ img { max-width: 100%; display: block; }
   bottom: 0;
   width: 70%;
   height: 78%;
-  background: url("/images/brewnet-art.svg") right bottom / contain no-repeat;
+  background: url("/images/brewnet-coffee.svg") right bottom / contain no-repeat;
   opacity: 0.5; /* 터미널 배경이미지 투명도 — 여기서 조절 */
   pointer-events: none;
 }
@@ -406,7 +406,7 @@ img { max-width: 100%; display: block; }
 
 /* ─── Stats ─── */
 .stats {
-  padding: 40px 0;
+  padding: 24px 0;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
@@ -431,7 +431,7 @@ img { max-width: 100%; display: block; }
 
 /* ─── Features ─── */
 .features {
-  padding: 100px 0;
+  padding: 56px 0;
 }
 .features-grid {
   display: grid;
@@ -488,7 +488,7 @@ img { max-width: 100%; display: block; }
 }
 /* ─── How It Works ─── */
 .how-it-works {
-  padding: 100px 0;
+  padding: 56px 0;
   background: var(--bg-surface);
 }
 .steps-grid {
@@ -590,7 +590,7 @@ img { max-width: 100%; display: block; }
 
 /* ─── Services ─── */
 .services {
-  padding: 100px 0;
+  padding: 56px 0;
 }
 .services-grid {
   display: grid;
@@ -673,7 +673,7 @@ img { max-width: 100%; display: block; }
 
 /* ─── Pricing ─── */
 .pricing {
-  padding: 100px 0;
+  padding: 56px 0;
   background: var(--bg-surface);
 }
 .pricing-grid {
@@ -764,13 +764,13 @@ img { max-width: 100%; display: block; }
 
 /* ─── Contact ─── */
 .contact {
-  padding: 100px 0;
+  padding: 56px 0;
 }
 .contact-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 56px 40px;
+  padding: 40px 32px;
 }
 .contact-grid {
   display: grid;
@@ -917,7 +917,7 @@ img { max-width: 100%; display: block; }
 
 /* ─── Footer ─── */
 .footer {
-  padding: 32px 0;
+  padding: 20px 0;
   border-top: 1px solid var(--border);
 }
 .footer-inner {
@@ -998,7 +998,7 @@ img { max-width: 100%; display: block; }
 
 /* ─── Pain Points ─── */
 .pain-points {
-  padding: 100px 0;
+  padding: 56px 0;
   background: var(--bg-surface);
 }
 .pain-grid {
@@ -1038,7 +1038,7 @@ img { max-width: 100%; display: block; }
 
 /* ─── FAQ ─── */
 .faq {
-  padding: 100px 0;
+  padding: 56px 0;
   background: var(--bg-surface);
 }
 .faq-list {
@@ -1102,13 +1102,13 @@ img { max-width: 100%; display: block; }
 
 /* ─── Newsletter ─── */
 .newsletter {
-  padding: 0 0 40px;
+  padding: 0 0 24px;
 }
 .newsletter-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 56px 40px;
+  padding: 40px 32px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -1187,7 +1187,7 @@ img { max-width: 100%; display: block; }
 
 /* ─── Final CTA ─── */
 .final-cta {
-  padding: 100px 0;
+  padding: 56px 0;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -1261,7 +1261,7 @@ img { max-width: 100%; display: block; }
   .nav-toggle { display: flex; }
   .btn-sm.btn-outline { display: none; }
 
-  .hero { padding: 120px 0 60px; }
+  .hero { padding: 80px 0 40px; }
   .hero-split { grid-template-columns: 1fr; text-align: center; }
   .hero-split .hero-desc { text-align: center; }
   .hero-stack-list { margin: 0 auto; }
@@ -1291,10 +1291,10 @@ img { max-width: 100%; display: block; }
     grid-template-columns: 1fr;
   }
   .contact-card {
-    padding: 32px 20px;
+    padding: 28px 16px;
   }
   .newsletter-card {
-    padding: 32px 20px;
+    padding: 28px 16px;
   }
   .newsletter-input-group {
     flex-direction: column;
