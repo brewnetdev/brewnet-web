@@ -9,6 +9,7 @@ import InstallationManual from "@/components/InstallationManual";
 // import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
+import Newsletter from "@/components/Newsletter";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 
@@ -26,6 +27,7 @@ export default function Home() {
       {/* <Pricing /> */}
       <FAQ />
       <Contact />
+      <Newsletter />
       <FinalCTA />
       <Footer />
     </>

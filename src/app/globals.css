@@ -1100,6 +1100,91 @@ img { max-width: 100%; display: block; }
   line-height: 1.7;
 }
 
+/* ─── Newsletter ─── */
+.newsletter {
+  padding: 0 0 40px;
+}
+.newsletter-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 56px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.newsletter-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient);
+}
+.newsletter-content {
+  max-width: 520px;
+  margin: 0 auto;
+}
+.newsletter-form {
+  margin-top: 32px;
+}
+.newsletter-input-group {
+  display: flex;
+  gap: 8px;
+}
+.newsletter-input-group input {
+  flex: 1;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.newsletter-input-group input:focus {
+  border-color: var(--primary);
+}
+.newsletter-input-group input::placeholder {
+  color: var(--text-muted);
+}
+.newsletter-input-group .btn {
+  padding: 12px 24px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.newsletter-form .form-error {
+  color: var(--red);
+  font-size: 13px;
+  text-align: center;
+  max-height: 0;
+  overflow: hidden;
+  margin: 0;
+  opacity: 0;
+  transition: max-height 0.3s, opacity 0.3s, margin 0.3s;
+}
+.newsletter-form .form-error-visible {
+  max-height: 60px;
+  opacity: 1;
+  margin-top: 8px;
+}
+.newsletter-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.newsletter-note svg {
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
 /* ─── Final CTA ─── */
 .final-cta {
   padding: 100px 0;
@@ -1207,6 +1292,12 @@ img { max-width: 100%; display: block; }
   }
   .contact-card {
     padding: 32px 20px;
+  }
+  .newsletter-card {
+    padding: 32px 20px;
+  }
+  .newsletter-input-group {
+    flex-direction: column;
   }
   .contact-form .form-grid {
     grid-template-columns: 1fr;
