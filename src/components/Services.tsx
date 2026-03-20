@@ -20,15 +20,15 @@ export default function Services() {
 
         <div className="services-grid">
           {services.map((svc) => (
-            <div className="service-item" key={svc.title}>
+            <article className="service-item" key={svc.title}>
               <div className={`service-icon ${svc.iconClass}`}>
                 {svc.iconText}
               </div>
               <div className="service-info">
-                <h4>{svc.title}</h4>
+                <h3>{svc.title}</h3>
                 <p>{svc.description}</p>
               </div>
-            </div>
+            </article>
           ))}
         </div>
 

@@ -41,7 +41,7 @@ export default function HowItWorks() {
 
         <div className="steps-grid">
           {steps.map((step) => (
-            <div className="step-card" key={step.number}>
+            <article className="step-card" key={step.number}>
               <div className="step-number">{step.number}</div>
               <div className="step-content">
                 <h3>{step.title}</h3>
@@ -51,21 +51,21 @@ export default function HowItWorks() {
                   <CopyButton code={step.code} />
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
 
-        <div className="commands-section">
+        <section className="commands-section">
           <h3 className="commands-title">CLI Commands</h3>
-          <div className="commands-grid">
+          <ul className="commands-grid" role="list">
             {cliCommands.map((cmd) => (
-              <div className="command-item" key={cmd.command}>
+              <li className="command-item" key={cmd.command}>
                 <code>{cmd.command}</code>
                 <span>{cmd.description}</span>
-              </div>
+              </li>
             ))}
-          </div>
-        </div>
+          </ul>
+        </section>
       </div>
     </section>
   );

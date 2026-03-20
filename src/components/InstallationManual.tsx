@@ -36,10 +36,11 @@ export default function InstallationManual() {
         </div>
 
         {/* System Requirements */}
-        <div id="system-requirements" className="commands-section" style={{ marginBottom: 32 }}>
+        <section id="system-requirements" className="commands-section" style={{ marginBottom: 32 }}>
           <h3 className="commands-title">System Requirements</h3>
           <div className="catalog-table">
             <table>
+              <caption className="sr-only">Brewnet system requirements</caption>
               <thead>
                 <tr>
                   <th>Requirement</th>
@@ -87,7 +88,7 @@ export default function InstallationManual() {
             Docker is not required before installation &mdash; brewnet init
             auto-detects and installs it.
           </p>
-        </div>
+        </section>
 
         {/* Installation Methods */}
         <div className="steps-grid" style={{ gridTemplateColumns: "repeat(2, 1fr)", marginBottom: 32 }}>
@@ -126,7 +127,7 @@ export default function InstallationManual() {
         </div>
 
         {/* Wizard Overview */}
-        <div className="commands-section" style={{ marginBottom: 32 }}>
+        <section className="commands-section" style={{ marginBottom: 32 }}>
           <h3 className="commands-title">7-Step Wizard Overview</h3>
           <div className="wizard-steps">
             {wizardSteps.map((ws) => (
@@ -139,10 +140,10 @@ export default function InstallationManual() {
               </div>
             ))}
           </div>
-        </div>
+        </section>
 
         {/* Post-Setup Commands */}
-        <div className="commands-section" style={{ marginBottom: 32 }}>
+        <section className="commands-section" style={{ marginBottom: 32 }}>
           <h3 className="commands-title">Post-Setup Commands</h3>
           <div className="commands-grid">
             {postSetupCommands.map((cmd) => (
@@ -152,10 +153,10 @@ export default function InstallationManual() {
               </div>
             ))}
           </div>
-        </div>
+        </section>
 
         {/* Uninstall */}
-        <div className="commands-section">
+        <section className="commands-section">
           <h3 className="commands-title">Uninstall</h3>
           <p
             style={{
@@ -187,7 +188,7 @@ export default function InstallationManual() {
             Note: Cloudflare Tunnel DNS records are not automatically deleted.
             Remove them manually at dash.cloudflare.com.
           </p>
-        </div>
+        </section>
       </div>
     </section>
   );

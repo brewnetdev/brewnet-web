@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     q: "Is Brewnet free to use?",
-    a: "The CLI tool is 100% open source (MIT License) and free. You can self-host as many services as your hardware supports. A Pro tier with a web dashboard for real-time monitoring is planned for the future.",
+    a: "The CLI tool is 100% open source (Apache 2.0 License) and free. You can self-host as many services as your hardware supports. A Pro tier with a web dashboard for real-time monitoring is planned for the future.",
   },
 ];
 
@@ -39,29 +39,33 @@ export default function FAQ() {
             <span className="gradient-text">questions</span>
           </h2>
         </div>
-        <div className="faq-list">
+        <dl className="faq-list">
           {faqs.map((item, i) => (
             <div
               className={`faq-item${openIdx === i ? " open" : ""}`}
               key={i}
             >
-              <button
-                className="faq-toggle"
-                onClick={() => setOpenIdx(openIdx === i ? null : i)}
-                aria-expanded={openIdx === i}
-              >
-                {item.q}
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg>
-              </button>
-              <div className="faq-answer">
+              <dt>
+                <button
+                  id={`faq-question-${i}`}
+                  className="faq-toggle"
+                  onClick={() => setOpenIdx(openIdx === i ? null : i)}
+                  aria-expanded={openIdx === i}
+                  aria-controls={`faq-answer-${i}`}
+                >
+                  {item.q}
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg>
+                </button>
+              </dt>
+              <dd className="faq-answer" id={`faq-answer-${i}`} role="region" aria-labelledby={`faq-question-${i}`}>
                 <p>{item.a}</p>
-              </div>
+              </dd>
             </div>
           ))}
-        </div>
+        </dl>
       </div>
     </section>
   );

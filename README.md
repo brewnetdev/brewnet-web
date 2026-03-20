@@ -4,7 +4,7 @@
 
 One command to set up your entire server stack. Self-hosted home server management platform with an interactive CLI wizard and 17 Docker-based services.
 
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Apache 2.0 License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 [![Open Source](https://img.shields.io/badge/open%20source-100%25-brightgreen.svg)](https://github.com/claude-code-expert/brewnet)
 
 ## Features
@@ -94,4 +94,4 @@ npm install -g brewnet
 
 ## License
 
-[MIT](LICENSE) © 2025-2026 Brewnet (codevillain)
+[Apache 2.0](LICENSE) © 2025-2026 Brewnet (codevillain)
