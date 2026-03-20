@@ -81,9 +81,9 @@ export default function TerminalAnimation() {
   return (
     <div className="hero-terminal">
       <div className="terminal-bar">
-        <span className="dot red" />
-        <span className="dot yellow" />
-        <span className="dot green" />
+        <span className="dot red" aria-hidden="true" />
+        <span className="dot yellow" aria-hidden="true" />
+        <span className="dot green" aria-hidden="true" />
         <span className="terminal-title">~/brewnet</span>
       </div>
       <div className="terminal-body">

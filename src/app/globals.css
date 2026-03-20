@@ -1,5 +1,17 @@
 /* Brewnet Landing Page — Dark Theme */
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 :root {
   --bg: #0a0a0b;
   --bg-surface: #111113;
@@ -26,7 +38,7 @@
   --radius-sm: 8px;
   --shadow: 0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
   --shadow-lg: 0 10px 40px rgba(0,0,0,0.4);
-  --gradient: linear-gradient(135deg, #58a6ff, #bc8cff, #3fb950);
+  --gradient: #f5a623;
 }
 
 /* Reset */
@@ -57,10 +69,7 @@ img { max-width: 100%; display: block; }
 
 /* ─── Gradient Text ─── */
 .gradient-text {
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #f5a623;
 }
 
 /* ─── Section Common ─── */
@@ -146,6 +155,9 @@ img { max-width: 100%; display: block; }
 .nav-links {
   display: flex;
   gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 .nav-links a {
   font-size: 14px;
@@ -432,6 +444,7 @@ img { max-width: 100%; display: block; }
 /* ─── Features ─── */
 .features {
   padding: 56px 0;
+  padding: 56px 0;
 }
 .features-grid {
   display: grid;
@@ -488,6 +501,7 @@ img { max-width: 100%; display: block; }
 }
 /* ─── How It Works ─── */
 .how-it-works {
+  padding: 56px 0;
   padding: 56px 0;
   background: var(--bg-surface);
 }
@@ -567,6 +581,9 @@ img { max-width: 100%; display: block; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 .command-item {
   display: flex;
@@ -590,6 +607,7 @@ img { max-width: 100%; display: block; }
 
 /* ─── Services ─── */
 .services {
+  padding: 56px 0;
   padding: 56px 0;
 }
 .services-grid {
@@ -673,6 +691,7 @@ img { max-width: 100%; display: block; }
 
 /* ─── Pricing ─── */
 .pricing {
+  padding: 56px 0;
   padding: 56px 0;
   background: var(--bg-surface);
 }
@@ -765,6 +784,7 @@ img { max-width: 100%; display: block; }
 /* ─── Contact ─── */
 .contact {
   padding: 56px 0;
+  padding: 56px 0;
 }
 .contact-card {
   background: var(--bg-card);
@@ -785,7 +805,7 @@ img { max-width: 100%; display: block; }
   gap: 16px;
   padding: 20px;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--border);
+  border: 1px solid #f5a623;
   transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;
 }
 .contact-item:hover {
@@ -999,6 +1019,7 @@ img { max-width: 100%; display: block; }
 /* ─── Pain Points ─── */
 .pain-points {
   padding: 56px 0;
+  padding: 56px 0;
   background: var(--bg-surface);
 }
 .pain-grid {
@@ -1038,6 +1059,7 @@ img { max-width: 100%; display: block; }
 
 /* ─── FAQ ─── */
 .faq {
+  padding: 56px 0;
   padding: 56px 0;
   background: var(--bg-surface);
 }
@@ -1187,6 +1209,7 @@ img { max-width: 100%; display: block; }
 
 /* ─── Final CTA ─── */
 .final-cta {
+  padding: 56px 0;
   padding: 56px 0;
   text-align: center;
   position: relative;

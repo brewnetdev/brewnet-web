@@ -46,11 +46,11 @@ export default function Nav() {
     <nav className="nav" id="nav" ref={navRef}>
       <div className="container nav-inner">
         <a
-          href="#"
+          href="/"
           className="nav-logo"
           onClick={(e) => handleAnchorClick(e, "#")}
         >
-          <svg className="nav-logo-icon" width="50" height="50" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+          <svg className="nav-logo-icon" width="50" height="50" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="M8 26H32V34C32 36.8 29.8 39 27 39H13C10.2 39 8 36.8 8 34V26Z" strokeWidth="3.2" fill="none" />
             <path d="M32 28.5C35.5 28.5 37 30.5 37 32.5C37 34.5 35.5 36.5 32 36.5" strokeWidth="3.2" fill="none" />
             <circle cx="20" cy="30" r="1.8" fill="currentColor" stroke="none" />
@@ -63,17 +63,18 @@ export default function Nav() {
             <span className="nav-logo-tagline">Your server on tap. Just brew it.</span>
           </span>
         </a>
-        <div className={`nav-links${mobileOpen ? " open" : ""}`} id="navLinks">
+        <ul className={`nav-links${mobileOpen ? " open" : ""}`} id="navLinks">
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={(e) => handleAnchorClick(e, link.href)}
-            >
-              {link.label}
-            </a>
+            <li key={link.href}>
+              <a
+                href={link.href}
+                onClick={(e) => handleAnchorClick(e, link.href)}
+              >
+                {link.label}
+              </a>
+            </li>
           ))}
-        </div>
+        </ul>
         <div className="nav-actions">
           <a
             href="#system-requirements"
@@ -86,6 +87,7 @@ export default function Nav() {
             className="nav-toggle"
             id="navToggle"
             aria-label="Toggle navigation"
+            aria-expanded={mobileOpen}
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             <span></span>

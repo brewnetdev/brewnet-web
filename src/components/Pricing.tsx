@@ -54,7 +54,7 @@ export default function Pricing() {
 
         <div className="pricing-grid">
           {/* Free */}
-          <div className="pricing-card">
+          <article className="pricing-card">
             <div className="pricing-header">
               <h3 className="pricing-name">Free</h3>
               <div className="pricing-price">
@@ -72,13 +72,13 @@ export default function Pricing() {
                 </li>
               ))}
             </ul>
-            <a href="#" className="btn btn-outline btn-block">
+            <button type="button" className="btn btn-outline btn-block">
               Get Started
-            </a>
-          </div>
+            </button>
+          </article>
 
           {/* Pro */}
-          <div className="pricing-card featured">
+          <article className="pricing-card featured">
             <div className="pricing-badge">Most Popular</div>
             <div className="pricing-header">
               <h3 className="pricing-name">Pro</h3>
@@ -100,13 +100,13 @@ export default function Pricing() {
                 </li>
               ))}
             </ul>
-            <a href="#" className="btn btn-primary btn-block">
+            <button type="button" className="btn btn-primary btn-block">
               Start Pro Trial
-            </a>
-          </div>
+            </button>
+          </article>
 
           {/* Team */}
-          <div className="pricing-card">
+          <article className="pricing-card">
             <div className="pricing-header">
               <h3 className="pricing-name">Team</h3>
               <div className="pricing-price">
@@ -127,10 +127,10 @@ export default function Pricing() {
                 </li>
               ))}
             </ul>
-            <a href="#" className="btn btn-outline btn-block">
+            <button type="button" className="btn btn-outline btn-block">
               Contact Sales
-            </a>
-          </div>
+            </button>
+          </article>
         </div>
       </div>
     </section>
