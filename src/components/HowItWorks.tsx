@@ -15,9 +15,7 @@ export default function HowItWorks() {
         <div className="section-header">
           <span className="section-badge">{t.badge}</span>
           <h2 className="section-title">
-            {t.title}
-            <br />
-            <span className="gradient-text">{t.titleHighlight}</span>
+            {t.title} <span className="gradient-text">{t.titleHighlight}</span>
           </h2>
           <p className="section-desc">{t.subtitle}</p>
         </div>

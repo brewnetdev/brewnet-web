@@ -57,9 +57,7 @@ export default function FAQ() {
         <div className="section-header">
           <span className="section-badge">{t.sectionBadge}</span>
           <h2 className="section-title">
-            {t.sectionTitleLine1}
-            <br />
-            <span className="gradient-text">{t.sectionTitleLine2}</span>
+            {t.sectionTitleLine1} <span className="gradient-text">{t.sectionTitleLine2}</span>
           </h2>
         </div>
         <div className="faq-columns">

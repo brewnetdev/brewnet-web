@@ -6,7 +6,10 @@ export const painPointsDict: Record<
     sectionBadge: string;
     sectionTitleLine1: string;
     sectionTitleLine2: string;
-    sectionDesc: string;
+    sectionDescPrefix: string;
+    sectionDescHighlight: string;
+    sectionDesc2: string;
+    sectionDesc3: string;
     pains: { title: string; desc: string }[];
   }
 > = {
@@ -14,8 +17,10 @@ export const painPointsDict: Record<
     sectionBadge: "The Problem",
     sectionTitleLine1: "Self-hosting shouldn\u2019t be",
     sectionTitleLine2: "this painful",
-    sectionDesc:
-      "A home server solution for those burdened by complex hosting setups and redundant cloud spending that weigh down early-stage businesses.",
+    sectionDescPrefix: "Complex hosting setups. Unpredictable costs.",
+    sectionDescHighlight: "Brewnet solves it.",
+    sectionDesc2: "Web server, Git, DB, Media & File server — all included. Cost: $0.",
+    sectionDesc3: "Simple setup wizard. Domain connection in 1 minute!",
     pains: [
       {
         title: "Runtime setup is a nightmare",
@@ -35,8 +40,10 @@ export const painPointsDict: Record<
     sectionBadge: "문제점",
     sectionTitleLine1: "셀프 호스팅이 이렇게",
     sectionTitleLine2: "고통스러울 필요 없습니다",
-    sectionDesc:
-      "복잡한 호스팅 설정과 불필요한 클라우드 비용에 시달리는 초기 단계 비즈니스를 위한 홈 서버 솔루션.",
+    sectionDescPrefix: "복잡한 호스팅 설정, 얼만지 모르는 비용.",
+    sectionDescHighlight: "이제 Brewnet이 해결합니다.",
+    sectionDesc2: "웹서버부터 Git, DB, Media 및 File 서버까지. 비용은 0원!",
+    sectionDesc3: "설정 마법사로 간단하게, 도메인 연결은 1분!",
     pains: [
       {
         title: "런타임 설정은 악몽입니다",

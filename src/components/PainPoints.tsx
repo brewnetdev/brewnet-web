@@ -33,13 +33,9 @@ export default function PainPoints() {
       <div className="container">
         <div className="section-header">
           <span className="section-badge">{t.sectionBadge}</span>
-          <h2 className="section-title">
-            {t.sectionTitleLine1}
-            <br />
-            <span className="gradient-text">{t.sectionTitleLine2}</span>
-          </h2>
+          <h2 className="section-title">{t.sectionDescPrefix}<br /><span className="gradient-text">{t.sectionDescHighlight}</span></h2>
           <p className="section-desc">
-            {t.sectionDesc}
+            {t.sectionDesc2} {t.sectionDesc3}
           </p>
         </div>
         <div className="pain-grid">

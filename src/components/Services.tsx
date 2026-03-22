@@ -9,13 +9,13 @@ const servicesDict = {
     badge: "Services",
     titleLine1: "All your server needs,",
     titleLine2: "one platform",
-    desc: "17 Docker services covering web servers, databases, file storage, media streaming, SSH, mail, and more.",
+    desc: "17 Docker services — web, database, storage, media, SSH, mail, and more.",
   },
   ko: {
     badge: "서비스",
     titleLine1: "서버에 필요한 모든 것,",
     titleLine2: "하나의 플랫폼에서",
-    desc: "웹 서버, 데이터베이스, 파일 스토리지, 미디어 스트리밍, SSH, 메일 등 17개의 Docker 서비스를 지원합니다.",
+    desc: "웹, 데이터베이스, 스토리지, 미디어, SSH, 메일 등 17개 Docker 서비스.",
   },
 } as const;
 
@@ -29,9 +29,7 @@ export default function Services() {
         <div className="section-header">
           <span className="section-badge">{t.badge}</span>
           <h2 className="section-title">
-            {t.titleLine1}
-            <br />
-            <span className="gradient-text">{t.titleLine2}</span>
+            {t.titleLine1} <span className="gradient-text">{t.titleLine2}</span>
           </h2>
           <p className="section-desc">{t.desc}</p>
         </div>

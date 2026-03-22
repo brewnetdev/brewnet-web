@@ -7,6 +7,7 @@ export const featuresDict: Record<
     title: string;
     titleHighlight: string;
     subtitle: string;
+    subtitle2: string;
     cards: {
       oneClickServerStack: { title: string; desc: string };
       secureByDefault: { title: string; desc: string };
@@ -25,7 +26,8 @@ export const featuresDict: Record<
     title: "Everything you need to",
     titleHighlight: "self-host like a pro",
     subtitle:
-      "Stop paying for cloud hosting. Deploy your projects with one command. No Docker knowledge required.",
+      "Stop paying for cloud hosting. Deploy with one command.",
+    subtitle2: "Domain, build, deploy — all in one step.",
     cards: {
       oneClickServerStack: {
         title: "One-Click Server Stack",
@@ -70,7 +72,8 @@ export const featuresDict: Record<
     title: "셀프 호스팅에 필요한",
     titleHighlight: "모든 것을 한 곳에",
     subtitle:
-      "클라우드 호스팅 비용은 이제 그만. 명령어 하나로 프로젝트를 배포하세요. Docker 지식은 필요 없습니다.",
+      "클라우드 호스팅 비용은 이제 그만. 명령어 하나로 배포하세요.",
+    subtitle2: "도메인 연결, 빌드, 배포를 한번에 손쉽게 해결하세요.",
     cards: {
       oneClickServerStack: {
         title: "원클릭 서버 스택",

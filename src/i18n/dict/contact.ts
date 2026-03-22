@@ -31,7 +31,7 @@ export const contactDict: Record<
   en: {
     toastSuccess: "Thank you! We\u2019ll get back to you within 24 hours.",
     badge: "Get In Touch",
-    title: "Developer Contact Form",
+    title: "Developer Contact",
     desc: "Have a specific inquiry? Send us a message directly. We\u2019ll respond via email or Telegram.",
     labelEmail: "Email *",
     labelPhone: "Phone",
@@ -52,12 +52,12 @@ export const contactDict: Record<
     errorMessage:
       "Something went wrong. Please try again or email us at hello@brewnet.dev.",
     telegramTitle: "Join our Telegram",
-    telegramDesc: "Chat with the team and community in real-time",
+    telegramDesc: "Got questions? Chat with us in real-time on our channel.",
   },
   ko: {
     toastSuccess: "감사합니다! 24시간 이내에 답변드리겠습니다.",
     badge: "문의하기",
-    title: "개발자 문의 양식",
+    title: "개발자 문의",
     desc: "궁금한 점이 있으신가요? 메시지를 보내주시면 이메일 또는 Telegram으로 답변드리겠습니다.",
     labelEmail: "이메일 *",
     labelPhone: "전화번호",
@@ -78,6 +78,6 @@ export const contactDict: Record<
     errorMessage:
       "문제가 발생했습니다. 다시 시도하시거나 hello@brewnet.dev로 이메일을 보내주세요.",
     telegramTitle: "Telegram 참여하기",
-    telegramDesc: "팀과 커뮤니티에서 실시간으로 소통하세요",
+    telegramDesc: "문의사항이 있으면 채널에서 실시간으로 소통하세요.",
   },
 };

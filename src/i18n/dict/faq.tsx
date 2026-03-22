@@ -89,8 +89,6 @@ sudo rm /usr/local/bin/brewnet
 rm -rf ~/.brewnet/source`}</pre>
         ),
       },
-    ],
-    usageItems: [
       {
         q: "How do I start/stop services?",
         a: (
@@ -104,6 +102,8 @@ brewnet logs [service]      # View service logs`}</pre>
           </>
         ),
       },
+    ],
+    usageItems: [
       {
         q: "How do I access the admin dashboard?",
         a: (
@@ -256,8 +256,6 @@ sudo rm /usr/local/bin/brewnet
 rm -rf ~/.brewnet/source`}</pre>
         ),
       },
-    ],
-    usageItems: [
       {
         q: "서비스를 시작/중지하려면?",
         a: (
@@ -271,6 +269,8 @@ brewnet logs [service]      # 서비스 로그 확인`}</pre>
           </>
         ),
       },
+    ],
+    usageItems: [
       {
         q: "관리 대시보드는 어떻게 접속하나요?",
         a: (

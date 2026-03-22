@@ -15,9 +15,7 @@ export default function InstallationManual() {
         <div className="section-header">
           <span className="section-badge">{t.badge}</span>
           <h2 className="section-title">
-            {t.titleLine1}
-            <br />
-            <span className="gradient-text">{t.titleLine2}</span>
+            {t.titleLine1} <span className="gradient-text">{t.titleLine2}</span>
           </h2>
           <p className="section-desc">{t.desc}</p>
         </div>
