@@ -1,57 +1,33 @@
 "use client";
 
 import { useState } from "react";
+import { useLocale } from "@/i18n/useLocale";
+import { faqDict } from "@/i18n/dict/faq";
 
-const faqs = [
-  {
-    q: "Do I need to know Docker to use Brewnet?",
-    a: "Not at all. Brewnet's interactive wizard handles all Docker configuration automatically — from installing Docker itself to generating docker-compose.yml and starting containers. You just answer simple questions.",
-  },
-  {
-    q: "Which operating systems are supported?",
-    a: "macOS 12+ and Ubuntu 20.04+ are officially supported. Brewnet auto-detects your OS and adjusts installation steps accordingly. Other Linux distros may work but are not officially tested.",
-  },
-  {
-    q: "Is my data safe? Can I back up and restore?",
-    a: "Yes. All data lives in Docker volumes on your own machine — nothing is sent to external servers. Brewnet includes built-in backup and restore commands, and you can preview any uninstall with --dry-run before making changes.",
-  },
-  {
-    q: "Can I use Brewnet behind NAT or CGNAT?",
-    a: "Absolutely. Brewnet has built-in Cloudflare Tunnel support. Just paste your Cloudflare token and it automatically configures the tunnel, ingress rules, and DNS — no port forwarding needed.",
-  },
-  {
-    q: "Is Brewnet free to use?",
-    a: "The CLI tool is 100% open source and free. You can self-host as many services as your hardware supports. A Pro tier with a web dashboard for real-time monitoring is planned for the future.",
-  },
-];
+interface FAQItem {
+  q: string;
+  a: React.ReactNode;
+}
 
-export default function FAQ() {
+function FAQColumn({ title, items, columnKey }: { title: string; items: FAQItem[]; columnKey: string }) {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
 
   return (
-    <section className="faq" id="faq">
-      <div className="container">
-        <div className="section-header">
-          <span className="section-badge">FAQ</span>
-          <h2 className="section-title">
-            Frequently asked
-            <br />
-            <span className="gradient-text">questions</span>
-          </h2>
-        </div>
-        <dl className="faq-list">
-          {faqs.map((item, i) => (
-            <div
-              className={`faq-item${openIdx === i ? " open" : ""}`}
-              key={i}
-            >
+    <div className="faq-column">
+      <h3 className="faq-column-title">{title}</h3>
+      <dl className="faq-list">
+        {items.map((item, i) => {
+          const isOpen = openIdx === i;
+          const id = `${columnKey}-${i}`;
+          return (
+            <div className={`faq-item${isOpen ? " open" : ""}`} key={i}>
               <dt>
                 <button
-                  id={`faq-question-${i}`}
+                  id={`faq-q-${id}`}
                   className="faq-toggle"
-                  onClick={() => setOpenIdx(openIdx === i ? null : i)}
-                  aria-expanded={openIdx === i}
-                  aria-controls={`faq-answer-${i}`}
+                  onClick={() => setOpenIdx(isOpen ? null : i)}
+                  aria-expanded={isOpen}
+                  aria-controls={`faq-a-${id}`}
                 >
                   {item.q}
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
@@ -60,12 +36,36 @@ export default function FAQ() {
                   </svg>
                 </button>
               </dt>
-              <dd className="faq-answer" id={`faq-answer-${i}`} role="region" aria-labelledby={`faq-question-${i}`}>
-                <p>{item.a}</p>
+              <dd className="faq-answer" id={`faq-a-${id}`} role="region" aria-labelledby={`faq-q-${id}`}>
+                <div className="faq-answer-content">{item.a}</div>
               </dd>
             </div>
-          ))}
-        </dl>
+          );
+        })}
+      </dl>
+    </div>
+  );
+}
+
+export default function FAQ() {
+  const { locale } = useLocale();
+  const t = faqDict[locale];
+
+  return (
+    <section className="faq" id="faq">
+      <div className="container">
+        <div className="section-header">
+          <span className="section-badge">{t.sectionBadge}</span>
+          <h2 className="section-title">
+            {t.sectionTitleLine1}
+            <br />
+            <span className="gradient-text">{t.sectionTitleLine2}</span>
+          </h2>
+        </div>
+        <div className="faq-columns">
+          <FAQColumn title={t.installTitle} items={t.installItems} columnKey="install" />
+          <FAQColumn title={t.usageTitle} items={t.usageItems} columnKey="usage" />
+        </div>
       </div>
     </section>
   );

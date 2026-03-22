@@ -1,4 +1,12 @@
+"use client";
+
+import { useLocale } from "@/i18n/useLocale";
+import { featuresDict } from "@/i18n/dict/features";
+
 export default function Features() {
+  const { locale } = useLocale();
+  const t = featuresDict[locale];
+
   const features = [
     {
       accent: "#58a6ff",
@@ -7,8 +15,8 @@ export default function Features() {
           <polygon points="5 3 19 12 5 21 5 3" />
         </svg>
       ),
-      title: "One-Click Server Stack",
-      desc: "Go, Java, Kotlin, Node, Python, Rust, React — pick your runtime and launch a production-ready web server in one command. No manual dependency setup, no version conflicts.",
+      title: t.cards.oneClickServerStack.title,
+      desc: t.cards.oneClickServerStack.desc,
     },
     {
       accent: "#3fb950",
@@ -17,8 +25,8 @@ export default function Features() {
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
         </svg>
       ),
-      title: "Secure by Default",
-      desc: "SSH key-only auth, root login disabled, auto-firewall configuration, and encrypted credential propagation across all services.",
+      title: t.cards.secureByDefault.title,
+      desc: t.cards.secureByDefault.desc,
     },
     {
       accent: "#bc8cff",
@@ -30,8 +38,8 @@ export default function Features() {
           <line x1="14" y1="11" x2="14" y2="17" />
         </svg>
       ),
-      title: "Clean Uninstall & Rollback",
-      desc: "Every change is tracked. Preview removals with --dry-run before executing. Full backup & restore, one-command rollback, and zero leftover containers, volumes, or configs after uninstall.",
+      title: t.cards.cleanUninstall.title,
+      desc: t.cards.cleanUninstall.desc,
     },
     {
       accent: "#f0883e",
@@ -42,8 +50,8 @@ export default function Features() {
           <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
         </svg>
       ),
-      title: "Cloudflare Tunnel Integration",
-      desc: "No port forwarding needed. Works behind NAT/CGNAT with automatic HTTPS and DDoS protection. Paste one Cloudflare token and tunnel, ingress rules, and DNS are configured automatically.",
+      title: t.cards.cloudflareTunnel.title,
+      desc: t.cards.cloudflareTunnel.desc,
     },
     {
       accent: "#d29922",
@@ -54,8 +62,8 @@ export default function Features() {
           <line x1="12" y1="22.08" x2="12" y2="12" />
         </svg>
       ),
-      title: "Docker Orchestration",
-      desc: "Auto-generates docker-compose.yml for up to 17 services with full container isolation. Each service runs in its own network sandbox with dependency ordering, health checks, and secure credential propagation.",
+      title: t.cards.dockerOrchestration.title,
+      desc: t.cards.dockerOrchestration.desc,
     },
     {
       accent: "#39d353",
@@ -65,9 +73,9 @@ export default function Features() {
           <path d="M13.73 21a2 2 0 01-3.46 0" />
         </svg>
       ),
-      title: "Slack & Telegram Notifications",
+      title: t.cards.slackTelegram.title,
       pro: true,
-      desc: "Get real-time alerts on service status, deployments, and errors — directly to Slack or Telegram. No database required. Just paste your webhook URL or bot token and start receiving notifications.",
+      desc: t.cards.slackTelegram.desc,
     },
     {
       accent: "#58a6ff",
@@ -77,8 +85,8 @@ export default function Features() {
           <polyline points="8 6 2 12 8 18" />
         </svg>
       ),
-      title: "Build, Deploy & Connect",
-      desc: "Server setup is just the start. Run your apps, connect custom domains, automate builds, deploy in one command, and monitor everything — the full DevOps lifecycle without the DevOps team.",
+      title: t.cards.buildDeployConnect.title,
+      desc: t.cards.buildDeployConnect.desc,
     },
     {
       accent: "#e3b341",
@@ -88,8 +96,8 @@ export default function Features() {
           <polyline points="8 17 12 21 16 17" />
         </svg>
       ),
-      title: "Cross-Platform Support",
-      desc: "macOS 12+ and Ubuntu 20.04+ officially supported. Brewnet auto-detects your OS, adjusts package managers, and handles platform-specific differences so you don't have to.",
+      title: t.cards.crossPlatform.title,
+      desc: t.cards.crossPlatform.desc,
     },
     {
       accent: "#f85149",
@@ -100,9 +108,9 @@ export default function Features() {
           <path d="M6 20v-6" />
         </svg>
       ),
-      title: "Web Dashboard & Monitoring",
+      title: t.cards.webDashboard.title,
       pro: true,
-      desc: "Browser-based setup wizard, real-time service monitoring, web terminal, and a visual interface for managing your entire server stack.",
+      desc: t.cards.webDashboard.desc,
     },
   ];
 
@@ -110,16 +118,13 @@ export default function Features() {
     <section className="features" id="features">
       <div className="container">
         <div className="section-header">
-          <span className="section-badge">Features</span>
+          <span className="section-badge">{t.badge}</span>
           <h2 className="section-title">
-            Everything you need to
+            {t.title}
             <br />
-            <span className="gradient-text">self-host like a pro</span>
+            <span className="gradient-text">{t.titleHighlight}</span>
           </h2>
-          <p className="section-desc">
-            Stop paying for cloud hosting. Deploy your projects with one
-            command. No Docker knowledge required.
-          </p>
+          <p className="section-desc">{t.subtitle}</p>
         </div>
 
         <div className="features-grid">

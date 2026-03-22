@@ -1,16 +1,17 @@
+"use client";
+
+import { useLocale } from "@/i18n/useLocale";
+import { statsDict } from "@/i18n/dict/stats";
+
 export default function Stats() {
-  const stats = [
-    { value: "17", label: "Docker Services" },
-    { value: "6+16", label: "Languages & Boilerplates" },
-    { value: "7", label: "Wizard Steps" },
-    { value: "100%", label: "Open Source CLI" },
-  ];
+  const { locale } = useLocale();
+  const t = statsDict[locale];
 
   return (
     <section className="stats">
       <div className="container">
         <div className="stats-grid">
-          {stats.map((stat) => (
+          {t.stats.map((stat) => (
             <div className="stat-item" key={stat.label}>
               <span className="stat-value">{stat.value}</span>
               <span className="stat-label">{stat.label}</span>

@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useEffect, FormEvent } from "react";
+import { useLocale } from "@/i18n/useLocale";
+import { newsletterDict } from "@/i18n/dict/newsletter";
 
 type FormState = "idle" | "submitting" | "success" | "error";
 
@@ -8,6 +10,8 @@ export default function Newsletter() {
   const [email, setEmail] = useState("");
   const [state, setState] = useState<FormState>("idle");
   const [toast, setToast] = useState(false);
+  const { locale } = useLocale();
+  const t = newsletterDict[locale];
 
   useEffect(() => {
     if (!toast) return;
@@ -47,18 +51,17 @@ export default function Newsletter() {
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <polyline points="20 6 9 17 4 12" />
             </svg>
-            Subscribed! We&apos;ll keep you posted on the latest updates.
+            {t.toastSuccess}
           </div>
 
           <div className="newsletter-content">
             <div className="section-header" style={{ marginBottom: 0 }}>
-              <span className="section-badge">Mailing List</span>
+              <span className="section-badge">{t.badge}</span>
               <h2 className="section-title" style={{ fontSize: "clamp(24px, 4vw, 32px)" }}>
-                Stay <span className="gradient-text">Up to Date</span>
+                {t.titlePrefix}<span className="gradient-text">{t.titleHighlight}</span>
               </h2>
               <p className="section-desc" style={{ fontSize: 15 }}>
-                Get notified about new features, releases, and Brewnet tips.
-                No spam — only the updates that matter.
+                {t.desc}
               </p>
             </div>
 
@@ -69,7 +72,7 @@ export default function Newsletter() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  placeholder="your@email.com"
+                  placeholder={t.placeholder}
                   disabled={state === "submitting"}
                 />
                 <button
@@ -77,11 +80,11 @@ export default function Newsletter() {
                   className="btn btn-primary"
                   disabled={state === "submitting"}
                 >
-                  {state === "submitting" ? "Subscribing..." : "Subscribe"}
+                  {state === "submitting" ? t.btnSubmitting : t.btnSubmit}
                 </button>
               </div>
               <p className={`form-error${state === "error" ? " form-error-visible" : ""}`}>
-                Something went wrong. Please try again.
+                {t.errorMessage}
               </p>
             </form>
 
@@ -90,7 +93,7 @@ export default function Newsletter() {
                 <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
                 <path d="M7 11V7a5 5 0 0110 0v4" />
               </svg>
-              Unsubscribe anytime. Your privacy is protected.
+              {t.privacyNote}
             </p>
           </div>
         </div>
