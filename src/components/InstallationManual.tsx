@@ -74,12 +74,10 @@ export default function InstallationManual() {
           </p>
         </section>
 
-        {/* Installation Methods */}
+        {/* Installation Method */}
         <div className="steps-grid" style={{ gridTemplateColumns: "repeat(2, 1fr)", marginBottom: 32 }}>
           <div className="step-card">
-            <div className="step-number" style={{ fontSize: 24 }}>
-              01
-            </div>
+            <div className="step-number" style={{ fontSize: 24 }}>01</div>
             <div className="step-content">
               <h3>{t.curlTitle}</h3>
               <p>{t.curlDesc}</p>
@@ -89,24 +87,14 @@ export default function InstallationManual() {
                 </code>
                 <CopyButton code="curl -fsSL https://raw.githubusercontent.com/claude-code-expert/brewnet/main/install.sh | bash" />
               </div>
-              <div className="code-block" style={{ marginTop: 8 }}>
-                <code>brewnet init</code>
-                <CopyButton code="brewnet init" />
-              </div>
             </div>
           </div>
           <div className="step-card">
-            <div className="step-number" style={{ fontSize: 24 }}>
-              02
-            </div>
+            <div className="step-number" style={{ fontSize: 24 }}>02</div>
             <div className="step-content">
-              <h3>{t.npmTitle}</h3>
-              <p>{t.npmDesc}</p>
+              <h3>Initialize</h3>
+              <p>{locale === "ko" ? "설치 후 초기 설정을 시작합니다." : "Start the initial setup after installation."}</p>
               <div className="code-block">
-                <code>npm install -g @brewnet/cli</code>
-                <CopyButton code="npm install -g @brewnet/cli" />
-              </div>
-              <div className="code-block" style={{ marginTop: 8 }}>
                 <code>brewnet init</code>
                 <CopyButton code="brewnet init" />
               </div>
