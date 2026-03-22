@@ -114,7 +114,7 @@ brewnet logs [service]      # View service logs`}</pre>
         ),
       },
       {
-        q: "How do I deploy an app?",
+        q: "How do I develop and deploy an app?",
         a: (
           <>
             <pre className="faq-pre">{`brewnet create-app my-app                    # Interactive selection
@@ -169,17 +169,7 @@ brewnet restore <backup-id> --force  # Restore without confirmation`}</pre>
       {
         q: "Where is the data stored?",
         a: (
-          <>
-            <pre className="faq-pre">{`~/.brewnet/
-├── config.json              # Global config
-├── projects/<name>/
-│   └── selections.json      # Project config
-├── backups/                 # Backup archives
-├── logs/                    # CLI logs
-├── gitea-config.json        # Gitea connection cache
-└── source/                  # Source code (curl install)`}</pre>
-            <p>Project directories (docker-compose.yml, app source, etc.) are located at <code className="faq-inline">~/brewnet/&lt;project-name&gt;/</code>.</p>
-          </>
+          <p>All config and metadata are stored in <code className="faq-inline">~/.brewnet/</code>. Project directories (docker-compose.yml, app source, etc.) are located at <code className="faq-inline">~/brewnet/&lt;project-name&gt;/</code>.</p>
         ),
       },
     ],
@@ -281,7 +271,7 @@ brewnet logs [service]      # 서비스 로그 확인`}</pre>
         ),
       },
       {
-        q: "앱을 배포하려면?",
+        q: "앱을 개발하고 배포하려면?",
         a: (
           <>
             <pre className="faq-pre">{`brewnet create-app my-app                    # 대화형 선택
@@ -336,17 +326,7 @@ brewnet restore <backup-id> --force  # 확인 없이 복원`}</pre>
       {
         q: "데이터가 어디에 저장되나요?",
         a: (
-          <>
-            <pre className="faq-pre">{`~/.brewnet/
-├── config.json              # 글로벌 설정
-├── projects/<name>/
-│   └── selections.json      # 프로젝트 설정
-├── backups/                 # 백업 아카이브
-├── logs/                    # CLI 로그
-├── gitea-config.json        # Gitea 연결 캐시
-└── source/                  # 소스 코드 (curl 설치 시)`}</pre>
-            <p>프로젝트 디렉토리(docker-compose.yml, 앱 소스 등)는 <code className="faq-inline">~/brewnet/&lt;project-name&gt;/</code>에 위치합니다.</p>
-          </>
+          <p>모든 설정과 메타데이터는 <code className="faq-inline">~/.brewnet/</code>에 저장됩니다. 프로젝트 디렉토리(docker-compose.yml, 앱 소스 등)는 <code className="faq-inline">~/brewnet/&lt;project-name&gt;/</code>에 위치합니다.</p>
         ),
       },
     ],

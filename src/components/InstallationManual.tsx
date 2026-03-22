@@ -130,41 +130,6 @@ export default function InstallationManual() {
           </div>
         </section>
 
-        {/* Post-Setup Commands */}
-        <section className="commands-section" style={{ marginBottom: 32 }}>
-          <h3 className="commands-title">{t.postSetupTitle}</h3>
-          <div className="commands-grid">
-            {t.postSetupCommands.map((cmd) => (
-              <div className="command-item" key={cmd.command}>
-                <code>{cmd.command}</code>
-                <span>{cmd.description}</span>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Uninstall */}
-        <section className="commands-section">
-          <h3 className="commands-title">{t.uninstallTitle}</h3>
-          <p
-            style={{
-              textAlign: "center",
-              color: "var(--text-muted)",
-              fontSize: 14,
-              marginBottom: 16,
-            }}
-          >
-            {t.uninstallDesc}
-          </p>
-          <div className="commands-grid" style={{ gridTemplateColumns: "1fr 1fr" }}>
-            {t.uninstallCommands.map((cmd) => (
-              <div className="command-item" key={cmd.command}>
-                <code>{cmd.command}</code>
-                <span>{cmd.description}</span>
-              </div>
-            ))}
-          </div>
-        </section>
       </div>
     </section>
   );
