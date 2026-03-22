@@ -57,7 +57,7 @@ export default function Newsletter() {
           <div className="newsletter-content">
             <div className="section-header" style={{ marginBottom: 0 }}>
               <span className="section-badge">{t.badge}</span>
-              <h2 className="section-title" style={{ fontSize: "clamp(24px, 4vw, 32px)" }}>
+              <h2 className="section-title" style={{ fontSize: "clamp(24px, 4vw, 32px)", whiteSpace: "nowrap", textAlign: "center" }}>
                 {t.titlePrefix}<span className="gradient-text">{t.titleHighlight}</span>
               </h2>
               <p className="section-desc" style={{ fontSize: 15 }}>
