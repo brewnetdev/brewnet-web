@@ -97,13 +97,17 @@ export default function InstallationManual() {
               01
             </div>
             <div className="step-content">
-              <h3>curl (Recommended)</h3>
+              <h3>curl</h3>
               <p>One-line install script that handles everything.</p>
               <div className="code-block">
                 <code style={{ fontSize: 12 }}>
                   curl -fsSL https://raw.githubusercontent.com/claude-code-expert/brewnet/main/install.sh | bash
                 </code>
                 <CopyButton code="curl -fsSL https://raw.githubusercontent.com/claude-code-expert/brewnet/main/install.sh | bash" />
+              </div>
+              <div className="code-block" style={{ marginTop: 8 }}>
+                <code>brewnet init</code>
+                <CopyButton code="brewnet init" />
               </div>
             </div>
           </div>
@@ -112,7 +116,7 @@ export default function InstallationManual() {
               02
             </div>
             <div className="step-content">
-              <h3>npm</h3>
+              <h3>npm (Recommended)</h3>
               <p>Install globally via npm package manager.</p>
               <div className="code-block">
                 <code>npm install -g @brewnet/cli</code>
