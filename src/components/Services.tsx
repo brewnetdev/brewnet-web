@@ -25,7 +25,7 @@ export default function Services() {
                 {svc.iconText}
               </div>
               <div className="service-info">
-                <h3>{svc.title}</h3>
+                <h3>{svc.title}{svc.pro && " (Pro)"}</h3>
                 <p>{svc.description}</p>
               </div>
             </article>

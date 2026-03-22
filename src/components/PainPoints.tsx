@@ -8,7 +8,7 @@ export default function PainPoints() {
         </svg>
       ),
       title: "Runtime setup is a nightmare",
-      desc: "Installing Go, Java, PHP, .NET, Python — each runtime has its own version manager, dependencies, and conflicts. Brewnet provisions any server runtime in one click with full isolation, zero dependency hell.",
+      desc: "Installing Go, Java, Kotlin, Node, Python, Rust, React — each runtime has its own version manager, dependencies, and conflicts. Brewnet provisions any server runtime in one click with full isolation, zero dependency hell.",
     },
     {
       icon: (
@@ -43,8 +43,7 @@ export default function PainPoints() {
             <span className="gradient-text">this painful</span>
           </h2>
           <p className="section-desc">
-            Setting up a personal server means juggling dozens of tools, configs,
-            and security concerns. Sound familiar?
+            A home server solution for those burdened by complex hosting setups and redundant cloud spending that weigh down early-stage businesses.
           </p>
         </div>
         <div className="pain-grid">

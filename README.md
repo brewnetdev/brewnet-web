@@ -9,12 +9,14 @@ One command to set up your entire server stack. Self-hosted home server manageme
 
 ## Features
 
-- **One-Click Server Stack** — Go, Java, PHP, .NET, Python, Node.js runtime setup with zero dependency conflicts
+- **One-Click Server Stack** — Go, Java, Kotlin, Node, Python, Rust, React — 6 languages, 16 framework boilerplates
 - **Secure by Default** — SSH key-only auth, root login disabled, auto-firewall, encrypted credential propagation
 - **Clean Uninstall & Rollback** — `--dry-run` preview, full backup & restore, one-command rollback
 - **Cloudflare Tunnel** — No port forwarding, NAT/CGNAT support, automatic HTTPS + DDoS protection
 - **Docker Orchestration** — Auto-generates `docker-compose.yml` for 17 services with health checks
-- **Slack & Telegram Notifications** — Real-time alerts via webhook or bot token
+- **Easy Install & Domain** — One-command setup, custom domain & Cloudflare integration
+- **Slack & Telegram Notifications** (Pro) — Real-time alerts via webhook or bot token
+- **Web Dashboard & Monitoring** (Pro) — Browser-based setup wizard, real-time service monitoring
 - **Cross-Platform** — macOS 12+ and Ubuntu 20.04+
 
 ## Tech Stack
@@ -38,7 +40,7 @@ Brewnet CLI 설치:
 curl -fsSL https://raw.githubusercontent.com/claude-code-expert/brewnet/main/install.sh | bash
 
 # npm
-npm install -g brewnet
+npm install -g @brewnet/cli
 ```
 
 ### Commands
@@ -62,19 +64,21 @@ npm install -g brewnet
 
 ### Supported Services (17)
 
-| Category | Services |
-|---|---|
-| Web Server | Traefik, Nginx, Caddy |
-| Git Server | Gitea |
-| Database | PostgreSQL, MySQL |
-| Cache | Redis, Valkey, KeyDB |
-| DB Admin | pgAdmin |
-| File Server | Nextcloud, MinIO |
-| Media | Jellyfin |
-| Utility | FileBrowser |
-| SSH | OpenSSH |
-| Mail | docker-mailserver |
-| Tunnel | Cloudflared |
+| Category | Services | Tier |
+|---|---|---|
+| Web Server | Traefik, Nginx, Caddy | Free |
+| Git Server | Gitea | Free |
+| Database | PostgreSQL, MySQL, SQLite | Free |
+| Cache | Redis, Valkey | Pro |
+| DB Admin | pgAdmin | Free |
+| File Server | Nextcloud, MinIO | Free |
+| Media | Jellyfin | Free |
+| Utility | FileBrowser | Free |
+| SSH | OpenSSH | Pro |
+| Mail | docker-mailserver | Pro |
+| Tunnel | Cloudflared | Free |
+| Dev Stack | Go, Java, Kotlin, Node, Python, Rust, React | Free |
+| Setup | Easy Install & Domain | Free |
 
 ### System Requirements
 

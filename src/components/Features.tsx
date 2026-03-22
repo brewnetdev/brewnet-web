@@ -8,7 +8,7 @@ export default function Features() {
         </svg>
       ),
       title: "One-Click Server Stack",
-      desc: "Go, Java, PHP, .NET, Python, Node.js — pick your runtime and launch a production-ready web server in one command. No manual dependency setup, no version conflicts.",
+      desc: "Go, Java, Kotlin, Node, Python, Rust, React — pick your runtime and launch a production-ready web server in one command. No manual dependency setup, no version conflicts.",
     },
     {
       accent: "#3fb950",
@@ -66,6 +66,7 @@ export default function Features() {
         </svg>
       ),
       title: "Slack & Telegram Notifications",
+      pro: true,
       desc: "Get real-time alerts on service status, deployments, and errors — directly to Slack or Telegram. No database required. Just paste your webhook URL or bot token and start receiving notifications.",
     },
     {
@@ -132,7 +133,7 @@ export default function Features() {
               </div>
               <h3>
                 {f.title}
-                {f.pro && <span className="pro-badge">Pro</span>}
+                {f.pro && " (Pro)"}
               </h3>
               <p>{f.desc}</p>
             </article>
