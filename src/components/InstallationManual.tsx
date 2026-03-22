@@ -123,8 +123,8 @@ export default function InstallationManual() {
                 <CopyButton code="npm install -g @brewnet/cli" />
               </div>
               <div className="code-block" style={{ marginTop: 8 }}>
-                <code>brewnet --version</code>
-                <CopyButton code="brewnet --version" />
+                <code>brewnet init</code>
+                <CopyButton code="brewnet init" />
               </div>
             </div>
           </div>
