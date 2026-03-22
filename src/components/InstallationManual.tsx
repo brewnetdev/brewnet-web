@@ -1,78 +1,63 @@
+"use client";
+
 import CopyButton from "./CopyButton";
 import { wizardSteps } from "@/data/wizard-steps";
+import { installationDict } from "@/i18n/dict/installation";
+import { useLocale } from "@/i18n/useLocale";
 
 export default function InstallationManual() {
-  const postSetupCommands = [
-    { command: "brewnet status", description: "Check service status" },
-    { command: "brewnet up", description: "Start all services" },
-    { command: "brewnet down", description: "Stop all services (data preserved)" },
-    { command: "brewnet logs [service]", description: "View service logs" },
-    { command: "brewnet add <service>", description: "Add a service" },
-    { command: "brewnet backup", description: "Create backup" },
-  ];
-
-  const uninstallCommands = [
-    { command: "brewnet uninstall --dry-run", description: "Preview what will be removed (no changes)" },
-    { command: "brewnet uninstall", description: "Full interactive removal" },
-    { command: "brewnet uninstall --keep-data", description: "Preserve DB/file volumes" },
-    { command: "brewnet uninstall --keep-config", description: "Preserve project directory, stop containers only" },
-    { command: "brewnet uninstall --force", description: "Skip confirmation prompt" },
-  ];
+  const { locale } = useLocale();
+  const t = installationDict[locale];
 
   return (
     <section className="how-it-works" id="install-guide">
       <div className="container">
         <div className="section-header">
-          <span className="section-badge">Installation</span>
+          <span className="section-badge">{t.badge}</span>
           <h2 className="section-title">
-            Get up and running
-            <br />
-            <span className="gradient-text">in minutes</span>
+            {t.titleLine1} <span className="gradient-text">{t.titleLine2}</span>
           </h2>
-          <p className="section-desc">
-            Complete installation guide from prerequisites to your first running
-            server.
-          </p>
+          <p className="section-desc">{t.desc}</p>
         </div>
 
         {/* System Requirements */}
         <section id="system-requirements" className="commands-section" style={{ marginBottom: 32 }}>
-          <h3 className="commands-title">System Requirements</h3>
+          <h3 className="commands-title">{t.sysReqTitle}</h3>
           <div className="catalog-table">
             <table>
-              <caption className="sr-only">Brewnet system requirements</caption>
+              <caption className="sr-only">{t.sysReqCaption}</caption>
               <thead>
                 <tr>
-                  <th>Requirement</th>
-                  <th>Minimum</th>
-                  <th>Recommended</th>
+                  <th>{t.thRequirement}</th>
+                  <th>{t.thMinimum}</th>
+                  <th>{t.thRecommended}</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>OS</td>
-                  <td>macOS 12+ / Ubuntu 20.04+</td>
-                  <td>Latest stable</td>
+                  <td>{t.rowOs}</td>
+                  <td>{t.rowOsMin}</td>
+                  <td>{t.rowOsRec}</td>
                 </tr>
                 <tr>
-                  <td>Node.js</td>
-                  <td>20+</td>
-                  <td>22 LTS</td>
+                  <td>{t.rowNode}</td>
+                  <td>{t.rowNodeMin}</td>
+                  <td>{t.rowNodeRec}</td>
                 </tr>
                 <tr>
-                  <td>Docker</td>
-                  <td>27+</td>
-                  <td>Latest (auto-installed if missing)</td>
+                  <td>{t.rowDocker}</td>
+                  <td>{t.rowDockerMin}</td>
+                  <td>{t.rowDockerRec}</td>
                 </tr>
                 <tr>
-                  <td>RAM</td>
-                  <td>2 GB</td>
-                  <td>4 GB+</td>
+                  <td>{t.rowRam}</td>
+                  <td>{t.rowRamMin}</td>
+                  <td>{t.rowRamRec}</td>
                 </tr>
                 <tr>
-                  <td>Disk</td>
-                  <td>20 GB</td>
-                  <td>50 GB+ (for media usage)</td>
+                  <td>{t.rowDisk}</td>
+                  <td>{t.rowDiskMin}</td>
+                  <td>{t.rowDiskRec}</td>
                 </tr>
               </tbody>
             </table>
@@ -85,8 +70,7 @@ export default function InstallationManual() {
               fontStyle: "italic",
             }}
           >
-            Docker is not required before installation &mdash; brewnet init
-            auto-detects and installs it.
+            {t.dockerNote}
           </p>
         </section>
 
@@ -97,8 +81,8 @@ export default function InstallationManual() {
               01
             </div>
             <div className="step-content">
-              <h3>curl</h3>
-              <p>One-line install script that handles everything.</p>
+              <h3>{t.curlTitle}</h3>
+              <p>{t.curlDesc}</p>
               <div className="code-block">
                 <code style={{ fontSize: 12 }}>
                   curl -fsSL https://raw.githubusercontent.com/claude-code-expert/brewnet/main/install.sh | bash
@@ -116,8 +100,8 @@ export default function InstallationManual() {
               02
             </div>
             <div className="step-content">
-              <h3>npm (Recommended)</h3>
-              <p>Install globally via npm package manager.</p>
+              <h3>{t.npmTitle}</h3>
+              <p>{t.npmDesc}</p>
               <div className="code-block">
                 <code>npm install -g @brewnet/cli</code>
                 <CopyButton code="npm install -g @brewnet/cli" />
@@ -132,14 +116,14 @@ export default function InstallationManual() {
 
         {/* Wizard Overview */}
         <section className="commands-section" style={{ marginBottom: 32 }}>
-          <h3 className="commands-title">7-Step Wizard Overview</h3>
+          <h3 className="commands-title">{t.wizardTitle}</h3>
           <div className="wizard-steps">
             {wizardSteps.map((ws) => (
               <div className="wizard-step" key={ws.step}>
                 <div className="wizard-step-num">{ws.step}</div>
                 <div>
-                  <div className="wizard-step-title">{ws.title}</div>
-                  <div className="wizard-step-desc">{ws.description}</div>
+                  <div className="wizard-step-title">{ws.title[locale]}</div>
+                  <div className="wizard-step-desc">{ws.description[locale]}</div>
                 </div>
               </div>
             ))}
@@ -148,9 +132,9 @@ export default function InstallationManual() {
 
         {/* Post-Setup Commands */}
         <section className="commands-section" style={{ marginBottom: 32 }}>
-          <h3 className="commands-title">Post-Setup Commands</h3>
+          <h3 className="commands-title">{t.postSetupTitle}</h3>
           <div className="commands-grid">
-            {postSetupCommands.map((cmd) => (
+            {t.postSetupCommands.map((cmd) => (
               <div className="command-item" key={cmd.command}>
                 <code>{cmd.command}</code>
                 <span>{cmd.description}</span>
@@ -161,7 +145,7 @@ export default function InstallationManual() {
 
         {/* Uninstall */}
         <section className="commands-section">
-          <h3 className="commands-title">Uninstall</h3>
+          <h3 className="commands-title">{t.uninstallTitle}</h3>
           <p
             style={{
               textAlign: "center",
@@ -170,11 +154,10 @@ export default function InstallationManual() {
               marginBottom: 16,
             }}
           >
-            Remove all Brewnet services, Docker volumes, and project files. Use
-            flags to control what gets removed.
+            {t.uninstallDesc}
           </p>
           <div className="commands-grid" style={{ gridTemplateColumns: "1fr 1fr" }}>
-            {uninstallCommands.map((cmd) => (
+            {t.uninstallCommands.map((cmd) => (
               <div className="command-item" key={cmd.command}>
                 <code>{cmd.command}</code>
                 <span>{cmd.description}</span>

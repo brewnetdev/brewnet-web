@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { JetBrains_Mono } from "next/font/google";
+import Providers from "./Providers";
 import "./globals.css";
 
 const jetbrainsMono = JetBrains_Mono({
@@ -53,7 +54,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
+    <html lang="en">
       <head>
         {process.env.NODE_ENV === "development" && (
           <Script
@@ -70,7 +71,7 @@ export default function RootLayout({
         />
       </head>
       <body className={jetbrainsMono.variable}>
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

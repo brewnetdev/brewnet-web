@@ -1,46 +1,27 @@
+"use client";
+
 import CopyButton from "./CopyButton";
 import { cliCommands } from "@/data/commands";
+import { useLocale } from "@/i18n/useLocale";
+import { howItWorksDict } from "@/i18n/dict/how-it-works";
 
 export default function HowItWorks() {
-  const steps = [
-    {
-      number: "01",
-      title: "Install Brewnet",
-      desc: "Install via curl (recommended) or npm. Requires Node.js 20+ and Docker 27+. Supports macOS 12+ and Ubuntu 20.04+.",
-      code: "curl -fsSL https://raw.githubusercontent.com/claude-code-expert/brewnet/main/install.sh | bash",
-    },
-    {
-      number: "02",
-      title: "Run the Wizard",
-      desc: "The interactive 7-step wizard walks you through: system check, project setup, admin account & server components, dev stack & runtime, domain & network, review, and generation & deployment.",
-      code: "brewnet init",
-    },
-    {
-      number: "03",
-      title: "Manage Services",
-      desc: "Add, remove, start, stop, and monitor services with simple commands. Check logs, manage domains, deploy apps.",
-      code: "brewnet status",
-    },
-  ];
+  const { locale } = useLocale();
+  const t = howItWorksDict[locale];
 
   return (
     <section className="how-it-works" id="how-it-works">
       <div className="container">
         <div className="section-header">
-          <span className="section-badge">Usage</span>
+          <span className="section-badge">{t.badge}</span>
           <h2 className="section-title">
-            Get started in
-            <br />
-            <span className="gradient-text">3 simple steps</span>
+            {t.title} <span className="gradient-text">{t.titleHighlight}</span>
           </h2>
-          <p className="section-desc">
-            From installation to a fully running server. The CLI wizard handles
-            everything.
-          </p>
+          <p className="section-desc">{t.subtitle}</p>
         </div>
 
         <div className="steps-grid">
-          {steps.map((step) => (
+          {t.steps.map((step) => (
             <article className="step-card" key={step.number}>
               <div className="step-number">{step.number}</div>
               <div className="step-content">
@@ -56,12 +37,12 @@ export default function HowItWorks() {
         </div>
 
         <section className="commands-section">
-          <h3 className="commands-title">CLI Commands</h3>
+          <h3 className="commands-title">{t.commandsTitle}</h3>
           <ul className="commands-grid" role="list">
             {cliCommands.map((cmd) => (
               <li className="command-item" key={cmd.command}>
                 <code>{cmd.command}</code>
-                <span>{cmd.description}</span>
+                <span>{cmd.description[locale]}</span>
               </li>
             ))}
           </ul>

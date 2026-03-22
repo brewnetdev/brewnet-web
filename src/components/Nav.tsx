@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useLocale } from "@/i18n/useLocale";
 
 
 export default function Nav() {
@@ -8,6 +9,7 @@ export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [starCount, setStarCount] = useState<number | null>(null);
   const wasScrolled = useRef(false);
+  const { locale, toggleLocale } = useLocale();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -86,6 +88,15 @@ export default function Nav() {
           ))}
         </ul>
         <div className="nav-actions">
+          <button
+            className="locale-toggle"
+            onClick={toggleLocale}
+            aria-label={locale === "en" ? "Switch to Korean" : "영어로 전환"}
+          >
+            <span className={locale === "en" ? "active" : ""}>EN</span>
+            <span className="locale-divider">|</span>
+            <span className={locale === "ko" ? "active" : ""}>KO</span>
+          </button>
           <a
             href="https://github.com/claude-code-expert/brewnet"
             className="github-star-btn"
