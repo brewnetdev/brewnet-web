@@ -38,21 +38,12 @@ export const metadata: Metadata = {
     url: siteUrl,
     siteName: "Brewnet",
     type: "website",
-    images: [
-      {
-        url: "/images/brewnet-coffee.svg",
-        width: 1200,
-        height: 630,
-        alt: "Brewnet — Your Home Server, Brewed Fresh",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Brewnet — Your Home Server, Brewed Fresh",
     description:
       "Self-hosted home server management platform. Interactive 8-step CLI wizard and Web Dashboard for setting up and managing personal servers with 17 Docker-based services.",
-    images: ["/images/brewnet-coffee.svg"],
   },
 };
 
