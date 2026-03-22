@@ -2,7 +2,6 @@
 
 import { services } from "@/data/services";
 import { useLocale } from "@/i18n/useLocale";
-import ServerCatalog from "./ServerCatalog";
 
 const servicesDict = {
   en: {
@@ -47,8 +46,6 @@ export default function Services() {
             </article>
           ))}
         </div>
-
-        <ServerCatalog />
       </div>
     </section>
   );

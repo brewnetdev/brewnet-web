@@ -32,7 +32,7 @@ export default function Hero() {
             <li><span className="stack-dot yellow" />{t.stackCloud}</li>
             <li><span className="stack-dot red" />{t.stackMonitoring}</li>
             <li><span className="stack-dot green" />{t.stackCiCd}</li>
-            <li className="stack-more">{t.stackMore}</li>
+            <li><span className="stack-dot purple" />{t.stackMore}</li>
           </ul>
         </div>
         <div className="hero-actions">
