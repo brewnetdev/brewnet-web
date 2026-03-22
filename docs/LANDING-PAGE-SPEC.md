@@ -70,8 +70,8 @@
 | 위치 | 현재 값 | 현재 라벨 | 변경 값 | 변경 라벨 |
 |---|---|---|---|---|
 | 1번 카드 | `15+` | Built-in Services | `17` | Docker Services |
-| 2번 카드 | `6` | Runtime Support | `7` | Backend Languages |
-| 3번 카드 | `8` | Setup Steps | `8` | Wizard Steps (0-7) |
+| 2번 카드 | `6` | Runtime Support | `6+16` | Languages & Boilerplates |
+| 3번 카드 | `8` | Setup Steps | `7` | Wizard Steps |
 | 4번 카드 | `100%` | Open Source CLI | `100%` | Open Source CLI |
 
 ---
@@ -129,7 +129,7 @@
 | **Title** | Install Brewnet (변경 없음) |
 | **현재 설명** | `Install Brewnet CLI globally via npm. Requires Node.js 20+ and Docker.` |
 | **변경 설명** | `Install via curl (recommended) or npm. Requires Node.js 20+ and Docker 27+. Supports macOS 12+ and Ubuntu 20.04+.` |
-| **현재 코드** | `npm install -g brewnet` |
+| **현재 코드** | `npm install -g @brewnet/cli` |
 | **변경 코드** | `curl -fsSL https://raw.githubusercontent.com/claude-code-expert/brewnet/main/install.sh \| bash` |
 
 #### Step 02: Run the Wizard
@@ -191,18 +191,18 @@
 | 1 | `web` | WEB | Web Server | Traefik, Nginx, Caddy | 변경 없음 |
 | 2 | `git` | GIT | Git Server | Gitea with SSH access (port 3022) | SSH 포트 추가 |
 | 3 | `db` | DB | Database | PostgreSQL, MySQL, SQLite | ~~MariaDB~~ 제거, SQLite 추가 |
-| 4 | `db` | CACHE | Cache | Redis, Valkey, KeyDB | **신규** (기존 DB에서 분리) |
+| 4 | `cache` | CACHE | Cache (Pro) | Redis, Valkey | **신규** (기존 DB에서 분리, KeyDB 제거) |
 | 5 | `file` | FILE | File Storage | Nextcloud, MinIO (S3) | ~~SFTP~~ 제거 (SFTP는 SSH 영역) |
 | 6 | `media` | MEDIA | Media Server | Jellyfin streaming | 변경 없음 |
-| 7 | `ssh` | SSH | SSH Server | OpenSSH, key-based auth, SFTP | SFTP 명시 |
-| 8 | `mail` | MAIL | Mail Server | docker-mailserver (SMTP/IMAP) | 변경 없음 |
+| 7 | `ssh` | SSH | SSH Server (Pro) | OpenSSH, key-based auth, SFTP | SFTP 명시, Pro 추가 |
+| 8 | `mail` | MAIL | Mail Server (Pro) | docker-mailserver (SMTP/IMAP) | Pro 추가 |
 | 9 | `ssl` | TUNNEL | Cloudflare Tunnel | Automatic HTTPS, DDoS protection | 이름/설명 변경 |
 | 10 | `file` | FB | FileBrowser | Web-based file management UI | **신규** |
-| 11 | `runtime` | DEV | Dev Stack | Node.js, Python, Go, Java, PHP, .NET, Rust | ~~Ruby~~ 제거, PHP/.NET 추가 |
+| 11 | `runtime` | DEV | Dev Stack | Go, Java, Kotlin, Node, Python, Rust, React | ~~Ruby~~ 제거, Kotlin/React 추가 |
 
 **주요 변경점**:
 - MariaDB → 스펙에서 제거됨
-- Ruby → 지원하지 않음, PHP/.NET으로 대체
+- Ruby → 지원하지 않음, Kotlin/React으로 대체
 - SFTP → File Storage에서 제거, SSH Server에 포함
 - SSL/Domain → Cloudflare Tunnel로 이름 변경
 - Cache 카드 신규 분리
@@ -230,16 +230,15 @@ Services 섹션(`#services`) 내부, services-grid 아래에 삽입.
 | **Git Server** | Gitea *(required)* | `gitea/gitea:latest` | 3000, 3022 | ~120 MB |
 | **Database** | PostgreSQL | `postgres:17-alpine` | 5432 | ~120 MB |
 | **Database** | MySQL | `mysql:8.4` | 3306 | ~256 MB |
-| **Cache** | Redis *(default)* | `redis:7-alpine` | 6379 | ~12 MB |
-| **Cache** | Valkey | `valkey/valkey:7-alpine` | 6379 | ~12 MB |
-| **Cache** | KeyDB | `eqalpha/keydb:latest` | 6379 | ~16 MB |
+| **Cache (Pro)** | Redis *(default)* | `redis:7-alpine` | 6379 | ~12 MB |
+| **Cache (Pro)** | Valkey | `valkey/valkey:7-alpine` | 6379 | ~12 MB |
 | **DB Admin** | pgAdmin | `dpage/pgadmin4:latest` | 5050 | ~128 MB |
 | **File Server** | Nextcloud | `nextcloud:29-apache` | 443 | ~256 MB |
 | **File Server** | MinIO | `minio/minio:latest` | 9000, 9001 | ~256 MB |
 | **Media** | Jellyfin | `jellyfin/jellyfin:latest` | 8096 | ~256 MB |
 | **Utility** | FileBrowser | `filebrowser/filebrowser:latest` | 80 | ~32 MB |
-| **SSH** | OpenSSH | `linuxserver/openssh-server:latest` | 2222 | ~16 MB |
-| **Mail** | docker-mailserver | `ghcr.io/docker-mailserver/docker-mailserver:latest` | 25, 587, 993 | ~256 MB |
+| **SSH (Pro)** | OpenSSH | `linuxserver/openssh-server:latest` | 2222 | ~16 MB |
+| **Mail (Pro)** | docker-mailserver | `ghcr.io/docker-mailserver/docker-mailserver:latest` | 25, 587, 993 | ~256 MB |
 | **Tunnel** | Cloudflared | `cloudflare/cloudflared:latest` | outbound only | ~32 MB |
 
 > **Note**: SQLite는 내장 DB (Docker 컨테이너 없음). pgAdmin은 PostgreSQL 선택 시에만 표시.
@@ -309,7 +308,7 @@ curl -fsSL https://raw.githubusercontent.com/claude-code-expert/brewnet/main/ins
 
 **Method 2 — npm**
 ```
-npm install -g brewnet
+npm install -g @brewnet/cli
 ```
 
 **설치 확인**
@@ -360,7 +359,6 @@ brewnet --version
 | `brewnet uninstall --keep-config` | 프로젝트 디렉토리 보존, 컨테이너만 중지 |
 | `brewnet uninstall --force` | 확인 프롬프트 생략 |
 
-> **주의**: Cloudflare Tunnel DNS 레코드는 자동 삭제되지 않습니다. `dash.cloudflare.com`에서 수동 삭제하세요.
 
 ---
 

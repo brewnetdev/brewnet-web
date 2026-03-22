@@ -23,10 +23,10 @@ export default function Hero() {
             <li><span className="stack-dot green" />Git Server (Gitea)</li>
             <li><span className="stack-dot blue" />Web Server (Nginx / Traefik)</li>
             <li><span className="stack-dot purple" />Media Server (Jellyfin)</li>
-            <li><span className="stack-dot orange" />Runtime Stack (Go, Java, PHP, .NET, Python)</li>
-            <li><span className="stack-dot cyan" />Database (PostgreSQL, Redis)</li>
+            <li><span className="stack-dot orange" />Runtime Stack (Go, Java, Kotlin, Node, Python, Rust, React)</li>
+            <li><span className="stack-dot cyan" />Database (PostgreSQL, SQLite, MySQL)</li>
             <li><span className="stack-dot yellow" />Cloud Storage (Nextcloud)</li>
-            <li><span className="stack-dot red" />Monitoring (Grafana, Prometheus)</li>
+            <li><span className="stack-dot red" />Monitoring (Grafana, Prometheus) (Pro)</li>
             <li><span className="stack-dot green" />CI/CD Pipeline</li>
             <li className="stack-more">+ 9 more services</li>
           </ul>

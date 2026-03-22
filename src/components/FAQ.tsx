@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     q: "Is Brewnet free to use?",
-    a: "The CLI tool is 100% open source (Apache 2.0 License) and free. You can self-host as many services as your hardware supports. A Pro tier with a web dashboard for real-time monitoring is planned for the future.",
+    a: "The CLI tool is 100% open source and free. You can self-host as many services as your hardware supports. A Pro tier with a web dashboard for real-time monitoring is planned for the future.",
   },
 ];
 

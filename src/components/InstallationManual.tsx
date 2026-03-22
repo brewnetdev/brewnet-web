@@ -115,8 +115,8 @@ export default function InstallationManual() {
               <h3>npm</h3>
               <p>Install globally via npm package manager.</p>
               <div className="code-block">
-                <code>npm install -g brewnet</code>
-                <CopyButton code="npm install -g brewnet" />
+                <code>npm install -g @brewnet/cli</code>
+                <CopyButton code="npm install -g @brewnet/cli" />
               </div>
               <div className="code-block" style={{ marginTop: 8 }}>
                 <code>brewnet --version</code>
@@ -177,17 +177,6 @@ export default function InstallationManual() {
               </div>
             ))}
           </div>
-          <p
-            style={{
-              color: "var(--red)",
-              fontSize: 12,
-              marginTop: 12,
-              fontStyle: "italic",
-            }}
-          >
-            Note: Cloudflare Tunnel DNS records are not automatically deleted.
-            Remove them manually at dash.cloudflare.com.
-          </p>
         </section>
       </div>
     </section>

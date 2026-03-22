@@ -1,6 +1,6 @@
 export const terminalCommands = [
   {
-    cmd: "npx brewnet init",
+    cmd: "brewnet init",
     output: [
       '<span class="out-green">&#10003;</span> <span class="out-bold">System Check</span> <span class="out-muted">&mdash; OS: Linux, Docker: v27.0, Ports: Available</span>',
       '<span class="out-green">&#10003;</span> <span class="out-bold">Project Setup</span> <span class="out-muted">&mdash; Name: my-server, Path: ~/brewnet-server</span>',

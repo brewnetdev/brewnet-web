@@ -84,7 +84,7 @@ export default function TerminalAnimation() {
         <span className="dot red" aria-hidden="true" />
         <span className="dot yellow" aria-hidden="true" />
         <span className="dot green" aria-hidden="true" />
-        <span className="terminal-title">~/brewnet</span>
+        <span className="terminal-title">brewnet ~ terminal</span>
       </div>
       <div className="terminal-body">
         <div className="term-line">

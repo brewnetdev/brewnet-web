@@ -21,7 +21,8 @@ export const services = [
     iconClass: "cache",
     iconText: "CACHE",
     title: "Cache",
-    description: "Redis, Valkey, KeyDB",
+    description: "Redis, Valkey",
+    pro: true,
   },
   {
     iconClass: "file",
@@ -40,12 +41,14 @@ export const services = [
     iconText: "SSH",
     title: "SSH Server",
     description: "OpenSSH, key-based auth, SFTP",
+    pro: true,
   },
   {
     iconClass: "mail",
     iconText: "MAIL",
     title: "Mail Server",
     description: "docker-mailserver (SMTP/IMAP)",
+    pro: true,
   },
   {
     iconClass: "ssl",
@@ -63,6 +66,12 @@ export const services = [
     iconClass: "runtime",
     iconText: "DEV",
     title: "Dev Stack",
-    description: "Node.js, Python, Go, Java, PHP, .NET, Rust",
+    description: "Go, Java, Kotlin, Node, Python, Rust, React — 16 framework boilerplates",
+  },
+  {
+    iconClass: "web",
+    iconText: "SETUP",
+    title: "Easy Install & Domain",
+    description: "One-command setup, custom domain & Cloudflare integration",
   },
 ];

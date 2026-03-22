@@ -185,7 +185,6 @@ img { max-width: 100%; display: block; }
 .toast-visible { opacity: 1; transform: translate(-50%, -50%) scale(1); pointer-events: auto; }
 .newsletter { padding: 0 0 24px; }
 .newsletter-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 40px 32px; text-align: center; position: relative; overflow: hidden; }
-.newsletter-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--gradient); }
 .newsletter-content { max-width: 520px; margin: 0 auto; }
 .newsletter-form { margin-top: 32px; }
 .newsletter-input-group { display: flex; gap: 8px; }
@@ -308,10 +307,10 @@ img { max-width: 100%; display: block; }
         <li><span class="stack-dot green"></span>Git Server (Gitea)</li>
         <li><span class="stack-dot blue"></span>Web Server (Nginx / Traefik)</li>
         <li><span class="stack-dot purple"></span>Media Server (Jellyfin)</li>
-        <li><span class="stack-dot orange"></span>Runtime Stack (Go, Java, PHP, .NET, Python)</li>
-        <li><span class="stack-dot cyan"></span>Database (PostgreSQL, Redis)</li>
+        <li><span class="stack-dot orange"></span>Runtime Stack (Go, Java, Kotlin, Node, Python, Rust, React)</li>
+        <li><span class="stack-dot cyan"></span>Database (PostgreSQL, SQLite, MySQL)</li>
         <li><span class="stack-dot yellow"></span>Cloud Storage (Nextcloud)</li>
-        <li><span class="stack-dot red"></span>Monitoring (Grafana, Prometheus)</li>
+        <li><span class="stack-dot red"></span>Monitoring (Grafana, Prometheus) (Pro)</li>
         <li><span class="stack-dot green"></span>CI/CD Pipeline</li>
         <li class="stack-more">+ 9 more services</li>
       </ul>
@@ -351,7 +350,7 @@ img { max-width: 100%; display: block; }
   <div class="container">
     <div class="stats-grid">
       <div class="stat-item"><span class="stat-value">17</span><span class="stat-label">Docker Services</span></div>
-      <div class="stat-item"><span class="stat-value">7</span><span class="stat-label">Backend Languages</span></div>
+      <div class="stat-item"><span class="stat-value">6+16</span><span class="stat-label">Languages & Boilerplates</span></div>
       <div class="stat-item"><span class="stat-value">7</span><span class="stat-label">Wizard Steps</span></div>
       <div class="stat-item"><span class="stat-value">100%</span><span class="stat-label">Open Source CLI</span></div>
     </div>
@@ -364,13 +363,13 @@ img { max-width: 100%; display: block; }
     <div class="section-header">
       <span class="section-badge">The Problem</span>
       <h2 class="section-title">Self-hosting shouldn't be<br><span class="gradient-text">this painful</span></h2>
-      <p class="section-desc">Setting up a personal server means juggling dozens of tools, configs, and security concerns. Sound familiar?</p>
+      <p class="section-desc">A home server solution for those burdened by complex hosting setups and redundant cloud spending that weigh down early-stage businesses.</p>
     </div>
     <div class="pain-grid">
       <article class="pain-card">
         <div class="pain-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg></div>
         <h3>Runtime setup is a nightmare</h3>
-        <p>Installing Go, Java, PHP, .NET, Python — each runtime has its own version manager, dependencies, and conflicts. Brewnet provisions any server runtime in one click with full isolation, zero dependency hell.</p>
+        <p>Installing Go, Java, Kotlin, Node, Python, Rust, React — each runtime has its own version manager, dependencies, and conflicts. Brewnet provisions any server runtime in one click with full isolation, zero dependency hell.</p>
       </article>
       <article class="pain-card">
         <div class="pain-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
@@ -398,7 +397,7 @@ img { max-width: 100%; display: block; }
       <article class="feature-card">
         <div class="feature-icon" style="--accent:#58a6ff"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
         <h3>One-Click Server Stack</h3>
-        <p>Go, Java, PHP, .NET, Python, Node.js — pick your runtime and launch a production-ready web server in one command. No manual dependency setup, no version conflicts.</p>
+        <p>Go, Java, Kotlin, Node, Python, Rust, React — pick your runtime and launch a production-ready web server in one command. No manual dependency setup, no version conflicts.</p>
       </article>
       <article class="feature-card">
         <div class="feature-icon" style="--accent:#3fb950"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
@@ -420,9 +419,9 @@ img { max-width: 100%; display: block; }
         <h3>Docker Orchestration</h3>
         <p>Auto-generates docker-compose.yml for up to 17 services with full container isolation. Each service runs in its own network sandbox with dependency ordering, health checks, and secure credential propagation.</p>
       </article>
-      <article class="feature-card">
+      <article class="feature-card feature-card-pro">
         <div class="feature-icon" style="--accent:#39d353"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></div>
-        <h3>Slack &amp; Telegram Notifications</h3>
+        <h3>Slack &amp; Telegram Notifications (Pro)</h3>
         <p>Get real-time alerts on service status, deployments, and errors — directly to Slack or Telegram. No database required. Just paste your webhook URL or bot token and start receiving notifications.</p>
       </article>
       <article class="feature-card">
@@ -437,7 +436,7 @@ img { max-width: 100%; display: block; }
       </article>
       <article class="feature-card feature-card-pro">
         <div class="feature-icon" style="--accent:#f85149"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg></div>
-        <h3>Web Dashboard &amp; Monitoring <span class="pro-badge">Pro</span></h3>
+        <h3>Web Dashboard &amp; Monitoring (Pro)</h3>
         <p>Browser-based setup wizard, real-time service monitoring, web terminal, and a visual interface for managing your entire server stack.</p>
       </article>
     </div>
@@ -512,14 +511,15 @@ img { max-width: 100%; display: block; }
       <article class="service-item"><div class="service-icon web">WEB</div><div class="service-info"><h3>Web Server</h3><p>Traefik, Nginx, Caddy</p></div></article>
       <article class="service-item"><div class="service-icon git">GIT</div><div class="service-info"><h3>Git Server</h3><p>Gitea with SSH access (port 3022)</p></div></article>
       <article class="service-item"><div class="service-icon db">DB</div><div class="service-info"><h3>Database</h3><p>PostgreSQL, MySQL, SQLite</p></div></article>
-      <article class="service-item"><div class="service-icon cache">CACHE</div><div class="service-info"><h3>Cache</h3><p>Redis, Valkey, KeyDB</p></div></article>
+      <article class="service-item"><div class="service-icon cache">CACHE</div><div class="service-info"><h3>Cache (Pro)</h3><p>Redis, Valkey</p></div></article>
       <article class="service-item"><div class="service-icon file">FILE</div><div class="service-info"><h3>File Storage</h3><p>Nextcloud, MinIO (S3)</p></div></article>
       <article class="service-item"><div class="service-icon media">MEDIA</div><div class="service-info"><h3>Media Server</h3><p>Jellyfin streaming</p></div></article>
-      <article class="service-item"><div class="service-icon ssh">SSH</div><div class="service-info"><h3>SSH Server</h3><p>OpenSSH, key-based auth, SFTP</p></div></article>
-      <article class="service-item"><div class="service-icon mail">MAIL</div><div class="service-info"><h3>Mail Server</h3><p>docker-mailserver (SMTP/IMAP)</p></div></article>
+      <article class="service-item"><div class="service-icon ssh">SSH</div><div class="service-info"><h3>SSH Server (Pro)</h3><p>OpenSSH, key-based auth, SFTP</p></div></article>
+      <article class="service-item"><div class="service-icon mail">MAIL</div><div class="service-info"><h3>Mail Server (Pro)</h3><p>docker-mailserver (SMTP/IMAP)</p></div></article>
       <article class="service-item"><div class="service-icon ssl">TUNNEL</div><div class="service-info"><h3>Cloudflare Tunnel</h3><p>Automatic HTTPS, DDoS protection</p></div></article>
       <article class="service-item"><div class="service-icon fb">FB</div><div class="service-info"><h3>FileBrowser</h3><p>Web-based file management UI</p></div></article>
-      <article class="service-item"><div class="service-icon runtime">DEV</div><div class="service-info"><h3>Dev Stack</h3><p>Node.js, Python, Go, Java, PHP, .NET, Rust</p></div></article>
+      <article class="service-item"><div class="service-icon runtime">DEV</div><div class="service-info"><h3>Dev Stack</h3><p>Go, Java, Kotlin, Node, Python, Rust, React — 16 framework boilerplates</p></div></article>
+      <article class="service-item"><div class="service-icon web">SETUP</div><div class="service-info"><h3>Easy Install &amp; Domain</h3><p>One-command setup, custom domain &amp; Cloudflare integration</p></div></article>
     </div>
 
     <!-- Server Catalog -->
@@ -537,16 +537,15 @@ img { max-width: 100%; display: block; }
             <tr><td>Git Server</td><td>Gitea (required)</td><td><code>gitea/gitea:latest</code></td><td>3000, 3022</td><td>~120 MB</td></tr>
             <tr><td>Database</td><td>PostgreSQL</td><td><code>postgres:17-alpine</code></td><td>5432</td><td>~120 MB</td></tr>
             <tr><td>Database</td><td>MySQL</td><td><code>mysql:8.4</code></td><td>3306</td><td>~256 MB</td></tr>
-            <tr><td>Cache</td><td>Redis (default)</td><td><code>redis:7-alpine</code></td><td>6379</td><td>~12 MB</td></tr>
-            <tr><td>Cache</td><td>Valkey</td><td><code>valkey/valkey:7-alpine</code></td><td>6379</td><td>~12 MB</td></tr>
-            <tr><td>Cache</td><td>KeyDB</td><td><code>eqalpha/keydb:latest</code></td><td>6379</td><td>~16 MB</td></tr>
+            <tr><td>Cache (Pro)</td><td>Redis (default)</td><td><code>redis:7-alpine</code></td><td>6379</td><td>~12 MB</td></tr>
+            <tr><td>Cache (Pro)</td><td>Valkey</td><td><code>valkey/valkey:7-alpine</code></td><td>6379</td><td>~12 MB</td></tr>
             <tr><td>DB Admin</td><td>pgAdmin</td><td><code>dpage/pgadmin4:latest</code></td><td>5050</td><td>~128 MB</td></tr>
             <tr><td>File Server</td><td>Nextcloud</td><td><code>nextcloud:29-apache</code></td><td>443</td><td>~256 MB</td></tr>
             <tr><td>File Server</td><td>MinIO</td><td><code>minio/minio:latest</code></td><td>9000, 9001</td><td>~256 MB</td></tr>
             <tr><td>Media</td><td>Jellyfin</td><td><code>jellyfin/jellyfin:latest</code></td><td>8096</td><td>~256 MB</td></tr>
             <tr><td>Utility</td><td>FileBrowser</td><td><code>filebrowser/filebrowser:latest</code></td><td>80</td><td>~32 MB</td></tr>
-            <tr><td>SSH</td><td>OpenSSH</td><td><code>linuxserver/openssh-server:latest</code></td><td>2222</td><td>~16 MB</td></tr>
-            <tr><td>Mail</td><td>docker-mailserver</td><td><code>ghcr.io/docker-mailserver/docker-mailserver:latest</code></td><td>25, 587, 993</td><td>~256 MB</td></tr>
+            <tr><td>SSH (Pro)</td><td>OpenSSH</td><td><code>linuxserver/openssh-server:latest</code></td><td>2222</td><td>~16 MB</td></tr>
+            <tr><td>Mail (Pro)</td><td>docker-mailserver</td><td><code>ghcr.io/docker-mailserver/docker-mailserver:latest</code></td><td>25, 587, 993</td><td>~256 MB</td></tr>
             <tr><td>Tunnel</td><td>Cloudflared</td><td><code>cloudflare/cloudflared:latest</code></td><td>outbound only</td><td>~32 MB</td></tr>
           </tbody>
         </table>
@@ -599,7 +598,7 @@ img { max-width: 100%; display: block; }
         <div class="step-content">
           <h3>npm</h3>
           <p>Install globally via npm package manager.</p>
-          <div class="code-block"><code>npm install -g brewnet</code><button class="copy-btn" onclick="copyCode(this)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+          <div class="code-block"><code>npm install -g @brewnet/cli</code><button class="copy-btn" onclick="copyCode(this)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
           <div class="code-block" style="margin-top:8px"><code>brewnet --version</code><button class="copy-btn" onclick="copyCode(this)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
         </div>
       </div>
@@ -643,7 +642,6 @@ img { max-width: 100%; display: block; }
         <div class="command-item"><code>brewnet uninstall --keep-config</code><span>Preserve project directory, stop containers only</span></div>
         <div class="command-item"><code>brewnet uninstall --force</code><span>Skip confirmation prompt</span></div>
       </div>
-      <p style="color:var(--red);font-size:12px;margin-top:12px;font-style:italic">Note: Cloudflare Tunnel DNS records are not automatically deleted. Remove them manually at dash.cloudflare.com.</p>
     </section>
   </div>
 </section>
@@ -893,7 +891,7 @@ function copyCode(btn){
 (function(){
   var commands = [
     {
-      cmd: 'npx brewnet init',
+      cmd: 'brewnet init',
       output: [
         '<span class="out-green">&#10003;</span> <span class="out-bold">System Check</span> <span class="out-muted">&mdash; OS: Linux, Docker: v27.0, Ports: Available</span>',
         '<span class="out-green">&#10003;</span> <span class="out-bold">Project Setup</span> <span class="out-muted">&mdash; Name: my-server, Path: ~/brewnet-server</span>',
