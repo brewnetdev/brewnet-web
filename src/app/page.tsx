@@ -10,7 +10,7 @@ import InstallationManual from "@/components/InstallationManual";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Newsletter from "@/components/Newsletter";
-import FinalCTA from "@/components/FinalCTA";
+// import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -29,7 +29,7 @@ export default function Home() {
         <FAQ />
         <Contact />
         <Newsletter />
-        <FinalCTA />
+        {/* <FinalCTA /> */}
       </main>
       <Footer />
     </>

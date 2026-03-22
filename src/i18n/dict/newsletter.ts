@@ -17,9 +17,9 @@ export const newsletterDict: Record<
 > = {
   en: {
     badge: "Mailing List",
-    titlePrefix: "Stay ",
-    titleHighlight: "Up to Date",
-    desc: "New features, releases, and tips. No spam.",
+    titlePrefix: "Complete Home Server ",
+    titleHighlight: "Pro — Get Early Access",
+    desc: "Easy setup, powerful monitoring, authorized device access, site analytics.",
     placeholder: "your@email.com",
     btnSubmitting: "Subscribing...",
     btnSubmit: "Subscribe",
@@ -30,9 +30,9 @@ export const newsletterDict: Record<
   },
   ko: {
     badge: "메일링 리스트",
-    titlePrefix: "최신 소식을 ",
-    titleHighlight: "받아보세요",
-    desc: "새 기능, 릴리스, 팁 알림. 스팸 없음.",
+    titlePrefix: "완전한 홈서버 ",
+    titleHighlight: "Pro 버전의 소식을 빠르게 받아보세요",
+    desc: "쉬운 설치, 강력한 모니터링, 인증된 기기 접근, 사이트 분석.",
     placeholder: "your@email.com",
     btnSubmitting: "구독 중...",
     btnSubmit: "구독하기",
