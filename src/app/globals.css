@@ -171,6 +171,35 @@ img { max-width: 100%; display: block; }
   align-items: center;
   gap: 12px;
 }
+.github-star-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.github-star-btn:hover {
+  color: #e3b341;
+  border-color: #e3b341;
+  background: rgba(227, 179, 65, 0.08);
+}
+.github-star-btn:hover svg {
+  fill: #e3b341;
+}
+.star-count {
+  padding-left: 6px;
+  border-left: 1px solid var(--border);
+  margin-left: 2px;
+  font-weight: 700;
+  color: var(--text-heading);
+}
 .nav-toggle {
   display: none;
   flex-direction: column;

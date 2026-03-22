@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 export default function Nav() {
   const navRef = useRef<HTMLElement>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [starCount, setStarCount] = useState<number | null>(null);
   const wasScrolled = useRef(false);
 
   useEffect(() => {
@@ -18,6 +19,17 @@ export default function Nav() {
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    fetch("https://api.github.com/repos/claude-code-expert/brewnet")
+      .then((res) => res.json())
+      .then((data) => {
+        if (typeof data.stargazers_count === "number") {
+          setStarCount(data.stargazers_count);
+        }
+      })
+      .catch(() => {});
   }, []);
 
   const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -74,6 +86,18 @@ export default function Nav() {
           ))}
         </ul>
         <div className="nav-actions">
+          <a
+            href="https://github.com/claude-code-expert/brewnet"
+            className="github-star-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            Star
+            {starCount !== null && <span className="star-count">{starCount}</span>}
+          </a>
           <a
             href="#system-requirements"
             className="btn btn-sm btn-outline"
