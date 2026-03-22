@@ -1,4 +1,9 @@
+"use client";
+
+import { useLocale } from "@/i18n/useLocale";
+
 export default function Footer() {
+  const { locale } = useLocale();
   return (
     <footer className="footer">
       <div className="container">
@@ -16,7 +21,7 @@ export default function Footer() {
               Brewnet
             </span>
             <span className="footer-copy">
-              {"\u00A9"} 2025-2026 Brewnet (codevillain). All rights reserved.
+              {"\u00A9"} 2026 Brewnet (codevillain). All rights reserved.
             </span>
           </div>
           <div className="footer-links">
@@ -42,6 +47,13 @@ export default function Footer() {
               License (Apache 2.0)
             </a>
             <a href="/privacy">Privacy</a>
+            <a
+              href="https://github.com/claude-code-expert/brewnet/issues"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {locale === "ko" ? "Bug 신고" : "Report Bug"}
+            </a>
           </div>
         </div>
       </div>

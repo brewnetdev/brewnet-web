@@ -20,8 +20,7 @@ export const howItWorksDict: Record<
     badge: "Usage",
     title: "Get started in",
     titleHighlight: "3 simple steps",
-    subtitle:
-      "From installation to a fully running server. The CLI wizard handles everything.",
+    subtitle: "Install to running server — the CLI wizard handles it all.",
     commandsTitle: "CLI Commands",
     steps: [
       {
@@ -48,8 +47,7 @@ export const howItWorksDict: Record<
     badge: "사용법",
     title: "간단한 3단계로",
     titleHighlight: "바로 시작하세요",
-    subtitle:
-      "설치부터 서버 가동까지. CLI 마법사가 모든 것을 처리합니다.",
+    subtitle: "설치부터 서버 가동까지, CLI 마법사가 모든 것을 처리합니다.",
     commandsTitle: "CLI 명령어",
     steps: [
       {

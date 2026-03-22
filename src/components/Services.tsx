@@ -8,13 +8,13 @@ const servicesDict = {
     badge: "Services",
     titleLine1: "All your server needs,",
     titleLine2: "one platform",
-    desc: "17 Docker services — web, database, storage, media, SSH, mail, and more.",
+    desc: "17 Docker services ready to deploy.",
   },
   ko: {
     badge: "서비스",
     titleLine1: "서버에 필요한 모든 것,",
     titleLine2: "하나의 플랫폼에서",
-    desc: "웹, 데이터베이스, 스토리지, 미디어, SSH, 메일 등 17개 Docker 서비스.",
+    desc: "17개 Docker 서비스를 바로 배포하세요.",
   },
 } as const;
 
