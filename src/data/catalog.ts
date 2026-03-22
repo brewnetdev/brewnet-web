@@ -17,7 +17,6 @@ export const catalogItems: {
   { category: { en: "Cache (Pro)", ko: "캐시 (Pro)" }, service: "Valkey", image: "valkey/valkey:7-alpine", ports: "6379", ram: "~12 MB" },
   { category: { en: "DB Admin", ko: "DB 관리" }, service: "pgAdmin", image: "dpage/pgadmin4:latest", ports: "5050", ram: "~128 MB" },
   { category: { en: "File Server", ko: "파일 서버" }, service: "Nextcloud", image: "nextcloud:29-apache", ports: "443", ram: "~256 MB" },
-  { category: { en: "File Server", ko: "파일 서버" }, service: "MinIO", image: "minio/minio:latest", ports: "9000, 9001", ram: "~256 MB" },
   { category: { en: "Media", ko: "미디어" }, service: "Jellyfin", image: "jellyfin/jellyfin:latest", ports: "8096", ram: "~256 MB" },
   { category: { en: "Utility", ko: "유틸리티" }, service: "FileBrowser", image: "filebrowser/filebrowser:latest", ports: "80", ram: "~32 MB" },
   { category: { en: "SSH (Pro)", ko: "SSH (Pro)" }, service: "OpenSSH", image: "linuxserver/openssh-server:latest", ports: "2222", ram: "~16 MB" },
