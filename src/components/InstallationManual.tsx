@@ -75,20 +75,18 @@ export default function InstallationManual() {
         </section>
 
         {/* Installation Methods */}
-        <div className="steps-grid" style={{ gridTemplateColumns: "repeat(2, 1fr)", marginBottom: 32 }}>
+        <div className="install-methods-grid">
           <div className="step-card">
             <div className="step-number" style={{ fontSize: 24 }}>01</div>
             <div className="step-content">
               <h3>{t.curlTitle}</h3>
               <p>{t.curlDesc}</p>
-              <p style={{ fontSize: 12, color: "var(--text-muted)", marginBottom: 4 }}>Step 1</p>
+              <p className="step-label">Step 1</p>
               <div className="code-block">
-                <code style={{ fontSize: 12 }}>
-                  curl -fsSL https://raw.githubusercontent.com/claude-code-expert/brewnet/main/install.sh | bash
-                </code>
+                <code>curl -fsSL https://raw.githubusercontent.com/claude-code-expert/brewnet/main/install.sh | bash</code>
                 <CopyButton code="curl -fsSL https://raw.githubusercontent.com/claude-code-expert/brewnet/main/install.sh | bash" />
               </div>
-              <p style={{ fontSize: 12, color: "var(--text-muted)", marginTop: 12, marginBottom: 4 }}>Step 2</p>
+              <p className="step-label" style={{ marginTop: 12 }}>Step 2</p>
               <div className="code-block">
                 <code>brewnet init</code>
                 <CopyButton code="brewnet init" />
@@ -100,12 +98,12 @@ export default function InstallationManual() {
             <div className="step-content">
               <h3>{t.npmTitle}</h3>
               <p>{t.npmDesc}</p>
-              <p style={{ fontSize: 12, color: "var(--text-muted)", marginBottom: 4 }}>Step 1</p>
+              <p className="step-label">Step 1</p>
               <div className="code-block">
                 <code>npm install -g @brewnet/cli</code>
                 <CopyButton code="npm install -g @brewnet/cli" />
               </div>
-              <p style={{ fontSize: 12, color: "var(--text-muted)", marginTop: 12, marginBottom: 4 }}>Step 2</p>
+              <p className="step-label" style={{ marginTop: 12 }}>Step 2</p>
               <div className="code-block">
                 <code>brewnet init</code>
                 <CopyButton code="brewnet init" />
