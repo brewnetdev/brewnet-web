@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { useLocale } from "@/i18n/useLocale";
+import { LOCALE_COOKIE } from "@/i18n/types";
 
 
 export default function Nav() {
@@ -9,7 +11,9 @@ export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [starCount, setStarCount] = useState<number | null>(null);
   const wasScrolled = useRef(false);
-  const { locale, toggleLocale } = useLocale();
+  const { locale } = useLocale();
+  const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -90,7 +94,12 @@ export default function Nav() {
         <div className="nav-actions">
           <button
             className="locale-toggle"
-            onClick={toggleLocale}
+            onClick={() => {
+              const target = locale === "en" ? "ko" : "en";
+              const newPath = pathname.replace(/^\/(en|ko)/, `/${target}`);
+              document.cookie = `${LOCALE_COOKIE}=${target};path=/;max-age=31536000`;
+              router.push(newPath);
+            }}
             aria-label={locale === "en" ? "Switch to Korean" : "영어로 전환"}
           >
             <span className={locale === "en" ? "active" : ""}>EN</span>

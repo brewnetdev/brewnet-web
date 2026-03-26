@@ -1,5 +1,11 @@
-export type Locale = "en" | "ko";
+export const LOCALES = ["en", "ko"] as const;
+
+export type Locale = (typeof LOCALES)[number];
 
 export const DEFAULT_LOCALE: Locale = "en";
 
-export const LOCALE_STORAGE_KEY = "brewnet-locale";
+export const LOCALE_COOKIE = "NEXT_LOCALE";
+
+export function isValidLocale(v: string): v is Locale {
+  return LOCALES.includes(v as Locale);
+}

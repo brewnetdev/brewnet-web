@@ -46,7 +46,7 @@ export default function Footer() {
             >
               License (Apache 2.0)
             </a>
-            <a href="/privacy">Privacy</a>
+            <a href={`/${locale}/privacy`}>Privacy</a>
             <a
               href="https://github.com/claude-code-expert/brewnet/issues"
               target="_blank"
