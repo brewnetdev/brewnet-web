@@ -1,9 +1,22 @@
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy — Brewnet",
-  description: "Brewnet privacy policy. How we handle your data.",
-};
+type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: "Privacy Policy — Brewnet",
+    description: "Brewnet privacy policy. How we handle your data.",
+    alternates: {
+      canonical: `/${locale}/privacy`,
+      languages: {
+        en: "/en/privacy",
+        ko: "/ko/privacy",
+        "x-default": "/en/privacy",
+      },
+    },
+  };
+}
 
 export default function PrivacyPage() {
   return (
