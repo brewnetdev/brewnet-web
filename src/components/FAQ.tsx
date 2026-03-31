@@ -64,6 +64,9 @@ export default function FAQ() {
           <FAQColumn title={t.installTitle} items={t.installItems} columnKey="install" />
           <FAQColumn title={t.usageTitle} items={t.usageItems} columnKey="usage" />
         </div>
+        <div className="faq-troubleshooting">
+          <FAQColumn title={t.troubleshootingTitle} items={t.troubleshootingItems} columnKey="troubleshooting" />
+        </div>
       </div>
     </section>
   );
