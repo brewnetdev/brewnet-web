@@ -67,9 +67,9 @@ export const installationDict: Record<
     rowDiskRec: "50 GB+ (for media usage)",
     dockerNote:
       "Docker is not required before installation \u2014 brewnet init auto-detects and installs it.",
-    curlTitle: "curl (Recommended)",
+    curlTitle: "curl",
     curlDesc: "One-line install script that handles everything.",
-    npmTitle: "npm",
+    npmTitle: "npm (Recommended)",
     npmDesc: "Install globally via npm package manager.",
     wizardTitle: "7-Step Install Wizard",
     postSetupTitle: "Post-Setup Commands",
@@ -119,9 +119,9 @@ export const installationDict: Record<
     rowDiskRec: "50 GB+ (미디어 사용 시)",
     dockerNote:
       "설치 전에 Docker가 필요하지 않습니다 \u2014 brewnet init이 자동으로 감지하고 설치합니다.",
-    curlTitle: "curl (권장)",
+    curlTitle: "curl",
     curlDesc: "모든 것을 처리하는 한 줄 설치 스크립트입니다.",
-    npmTitle: "npm",
+    npmTitle: "npm (권장)",
     npmDesc: "npm 패키지 매니저를 통해 전역 설치합니다.",
     wizardTitle: "7단계 설치 마법사",
     postSetupTitle: "설치 후 명령어",

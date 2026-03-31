@@ -79,12 +79,12 @@ export default function InstallationManual() {
           <div className="step-card">
             <div className="step-number" style={{ fontSize: 24 }}>01</div>
             <div className="step-content">
-              <h3>{t.curlTitle}</h3>
-              <p>{t.curlDesc}</p>
+              <h3>{t.npmTitle}</h3>
+              <p>{t.npmDesc}</p>
               <p className="step-label">Step 1</p>
               <div className="code-block">
-                <code>curl -fsSL https://raw.githubusercontent.com/claude-code-expert/brewnet/main/install.sh | bash</code>
-                <CopyButton code="curl -fsSL https://raw.githubusercontent.com/claude-code-expert/brewnet/main/install.sh | bash" />
+                <code>npm install -g @brewnet/cli</code>
+                <CopyButton code="npm install -g @brewnet/cli" />
               </div>
               <p className="step-label" style={{ marginTop: 12 }}>Step 2</p>
               <div className="code-block">
@@ -96,12 +96,12 @@ export default function InstallationManual() {
           <div className="step-card">
             <div className="step-number" style={{ fontSize: 24 }}>02</div>
             <div className="step-content">
-              <h3>{t.npmTitle}</h3>
-              <p>{t.npmDesc}</p>
+              <h3>{t.curlTitle}</h3>
+              <p>{t.curlDesc}</p>
               <p className="step-label">Step 1</p>
               <div className="code-block">
-                <code>npm install -g @brewnet/cli</code>
-                <CopyButton code="npm install -g @brewnet/cli" />
+                <code>curl -fsSL https://raw.githubusercontent.com/claude-code-expert/brewnet/main/install.sh | bash</code>
+                <CopyButton code="curl -fsSL https://raw.githubusercontent.com/claude-code-expert/brewnet/main/install.sh | bash" />
               </div>
               <p className="step-label" style={{ marginTop: 12 }}>Step 2</p>
               <div className="code-block">
