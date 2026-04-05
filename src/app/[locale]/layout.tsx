@@ -92,7 +92,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       alternateLocale: lang === "ko" ? "en_US" : "ko_KR",
       images: [
         {
-          url: `${siteUrl}/og-image.png`,
+          url: `${siteUrl}/opengraph-image`,
           width: 1200,
           height: 630,
           alt: "Brewnet — Your Home Server, Brewed Fresh",
@@ -103,7 +103,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title,
       description,
-      images: [`${siteUrl}/og-image.png`],
+      images: [`${siteUrl}/opengraph-image`],
     },
   };
 }
