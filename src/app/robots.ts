@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://brewnet.dev/sitemap.xml",
+    sitemap: "https://www.brewnet.dev/sitemap.xml",
   };
 }
