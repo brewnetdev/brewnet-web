@@ -11,7 +11,7 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500", "600"],
 });
 
-const siteUrl = "https://brewnet.dev";
+const siteUrl = "https://www.brewnet.dev";
 
 const descriptions = {
   en: "Open-source self-hosted home server platform. One CLI command to deploy 17 Docker services — Gitea, Nginx, Jellyfin, PostgreSQL, Nextcloud, Grafana and more. Free, no cloud subscription.",

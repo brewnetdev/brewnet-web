@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { LOCALES } from "@/i18n/types";
 
-const BASE_URL = "https://brewnet.dev";
+const BASE_URL = "https://www.brewnet.dev";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages = [
