@@ -90,16 +90,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "website",
       locale: lang === "ko" ? "ko_KR" : "en_US",
       alternateLocale: lang === "ko" ? "en_US" : "ko_KR",
+      images: [
+        {
+          url: `${siteUrl}/images/og-image.png`,
+          width: 1200,
+          height: 630,
+          alt: "Brewnet — Your Home Server, Brewed Fresh",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [`${siteUrl}/images/og-image.png`],
     },
   };
 }
 
-const jsonLd = {
+const softwareJsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   name: "Brewnet",
@@ -125,6 +134,23 @@ const jsonLd = {
     "home server, self-hosted, docker, server management, CLI, homelab, NAS, open source",
 };
 
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Brewnet",
+  url: siteUrl,
+  logo: `${siteUrl}/icon.svg`,
+  description:
+    "Open-source self-hosted home server platform. Deploy 17 Docker services with one CLI command.",
+  sameAs: ["https://github.com/claude-code-expert/brewnet"],
+  foundingDate: "2025",
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "technical support",
+    url: `${siteUrl}/en#contact`,
+  },
+};
+
 export default async function LocaleLayout({
   children,
   params,
@@ -140,7 +166,13 @@ export default async function LocaleLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd),
+          }}
         />
         {process.env.NODE_ENV === "development" && (
           <Script
