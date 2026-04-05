@@ -6,12 +6,6 @@ const BASE_URL = "https://brewnet.dev";
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages = [
     { path: "", changeFrequency: "weekly" as const, priority: 1.0 },
-    { path: "/#features", changeFrequency: "monthly" as const, priority: 0.8 },
-    { path: "/#services", changeFrequency: "monthly" as const, priority: 0.8 },
-    { path: "/#how-it-works", changeFrequency: "monthly" as const, priority: 0.7 },
-    { path: "/#install-guide", changeFrequency: "monthly" as const, priority: 0.9 },
-    { path: "/#faq", changeFrequency: "monthly" as const, priority: 0.8 },
-    { path: "/#contact", changeFrequency: "yearly" as const, priority: 0.5 },
     { path: "/privacy", changeFrequency: "yearly" as const, priority: 0.3 },
   ];
 

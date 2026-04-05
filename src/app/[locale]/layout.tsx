@@ -147,7 +147,7 @@ const organizationJsonLd = {
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "technical support",
-    url: `${siteUrl}/en#contact`,
+    url: `${siteUrl}/#contact`,
   },
 };
 

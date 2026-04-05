@@ -61,21 +61,7 @@ export default function Hero() {
           </a>
         </div>
         <TerminalAnimation />
-        <section
-          aria-label="Summary"
-          className="hero-tldr"
-          style={{
-            position: "absolute",
-            width: 1,
-            height: 1,
-            padding: 0,
-            margin: -1,
-            overflow: "hidden",
-            clip: "rect(0,0,0,0)",
-            whiteSpace: "nowrap",
-            borderWidth: 0,
-          }}
-        >
+        <section aria-label="Summary" className="sr-only">
           <h2>TL;DR</h2>
           <ul>
             {t.tldr.map((item, i) => (
