@@ -61,6 +61,14 @@ export default function Hero() {
           </a>
         </div>
         <TerminalAnimation />
+        <section aria-label="Summary" className="sr-only">
+          <h2>TL;DR</h2>
+          <ul>
+            {t.tldr.map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
+          </ul>
+        </section>
       </div>
     </section>
   );

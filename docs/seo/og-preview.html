@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brewnet OG Preview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0d1117; color: #e6edf3; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; padding: 40px; min-height: 100vh; }
+  h1 { font-size: 20px; color: #8b949e; margin-bottom: 32px; font-weight: 400; }
+  .cards { display: flex; flex-direction: column; gap: 48px; max-width: 600px; margin: 0 auto; }
+  .card-label { font-size: 13px; color: #f59e0b; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; }
+  .card { border: 1px solid #30363d; border-radius: 12px; overflow: hidden; background: #161b22; }
+  .card img { width: 100%; display: block; }
+  .card-body { padding: 16px; }
+  .card-body .url { font-size: 12px; color: #8b949e; margin-bottom: 4px; }
+  .card-body .title { font-size: 15px; font-weight: 600; color: #e6edf3; margin-bottom: 4px; }
+  .card-body .desc { font-size: 13px; color: #8b949e; line-height: 1.4; }
+  .tools { margin-top: 48px; padding-top: 24px; border-top: 1px solid #21262d; }
+  .tools h2 { font-size: 14px; color: #8b949e; margin-bottom: 16px; font-weight: 400; }
+  .tools a { display: block; color: #58a6ff; text-decoration: none; font-size: 14px; padding: 6px 0; }
+  .tools a:hover { text-decoration: underline; }
+  .meta-table { margin-top: 48px; padding-top: 24px; border-top: 1px solid #21262d; }
+  .meta-table h2 { font-size: 14px; color: #8b949e; margin-bottom: 16px; font-weight: 400; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  td { padding: 8px 12px; border-bottom: 1px solid #21262d; }
+  td:first-child { color: #f59e0b; white-space: nowrap; width: 180px; }
+</style>
+</head>
+<body>
+
+<h1>Brewnet OG / Twitter Card Preview</h1>
+
+<div class="cards">
+
+  <div>
+    <div class="card-label">Open Graph (Facebook, Discord, Slack, KakaoTalk)</div>
+    <div class="card">
+      <img src="../../public/images/og-image.png" alt="OG Image Preview">
+      <div class="card-body">
+        <div class="url">brewnet.dev</div>
+        <div class="title">Brewnet &mdash; Open Source Home Server Management CLI</div>
+        <div class="desc">Open-source self-hosted home server platform. One CLI command to deploy 17 Docker services &mdash; Gitea, Nginx, Jellyfin, PostgreSQL, Nextcloud, Grafana and more. Free, no cloud subscription.</div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="card-label">Twitter / X (summary_large_image)</div>
+    <div class="card">
+      <img src="../../public/images/og-image.png" alt="Twitter Card Preview">
+      <div class="card-body">
+        <div class="title">Brewnet &mdash; Open Source Home Server Management CLI</div>
+        <div class="desc">Open-source self-hosted home server platform. One CLI command to deploy 17 Docker services &mdash; Gitea, Nginx, Jellyfin, PostgreSQL, Nextcloud, Grafana and more. Free, no cloud subscription.</div>
+        <div class="url" style="margin-top:6px">brewnet.dev</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="tools">
+  <h2>External Validators</h2>
+  <a href="https://www.opengraph.xyz/url/https%3A%2F%2Fbrewnet.dev%2Fen" target="_blank">opengraph.xyz &mdash; OG 태그 전체 검증</a>
+  <a href="https://cards-dev.twitter.com/validator" target="_blank">Twitter Card Validator</a>
+  <a href="https://developers.facebook.com/tools/debug/?q=https%3A%2F%2Fbrewnet.dev%2Fen" target="_blank">Facebook Sharing Debugger</a>
+  <a href="https://search.google.com/test/rich-results?url=https%3A%2F%2Fbrewnet.dev%2Fen" target="_blank">Google Rich Results Test &mdash; JSON-LD 검증</a>
+</div>
+
+<div class="meta-table">
+  <h2>Current OG Meta Tags</h2>
+  <table>
+    <tr><td>og:title</td><td>Brewnet &mdash; Open Source Home Server Management CLI</td></tr>
+    <tr><td>og:description</td><td>Open-source self-hosted home server platform. One CLI command to deploy 17 Docker services...</td></tr>
+    <tr><td>og:image</td><td>https://brewnet.dev/images/og-image.png</td></tr>
+    <tr><td>og:image:width</td><td>1200</td></tr>
+    <tr><td>og:image:height</td><td>630</td></tr>
+    <tr><td>og:image:alt</td><td>Brewnet &mdash; Your Home Server, Brewed Fresh</td></tr>
+    <tr><td>og:url</td><td>https://brewnet.dev/en</td></tr>
+    <tr><td>og:site_name</td><td>Brewnet</td></tr>
+    <tr><td>og:type</td><td>website</td></tr>
+    <tr><td>og:locale</td><td>en_US / ko_KR</td></tr>
+    <tr><td>twitter:card</td><td>summary_large_image</td></tr>
+    <tr><td>twitter:image</td><td>https://brewnet.dev/images/og-image.png</td></tr>
+  </table>
+</div>
+
+</body>
+</html>

@@ -5,7 +5,7 @@ const BASE_URL = "https://brewnet.dev";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages = [
-    { path: "", changeFrequency: "weekly" as const, priority: 1 },
+    { path: "", changeFrequency: "weekly" as const, priority: 1.0 },
     { path: "/privacy", changeFrequency: "yearly" as const, priority: 0.3 },
   ];
 
