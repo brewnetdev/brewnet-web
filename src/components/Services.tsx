@@ -2,37 +2,11 @@
 
 import { services } from "@/data/services";
 import { useLocale } from "@/i18n/useLocale";
-
-const servicesDict = {
-  en: {
-    badge: "Services",
-    titleLine1: "All your server needs,",
-    titleLine2: "one platform",
-    desc: "17 Docker services ready to deploy.",
-  },
-  ko: {
-    badge: "서비스",
-    titleLine1: "서버에 필요한 모든 것,",
-    titleLine2: "하나의 플랫폼에서",
-    desc: "17개 Docker 서비스를 바로 배포하세요.",
-  },
-  ja: {
-    badge: "サービス",
-    titleLine1: "サーバーに必要なすべてを、",
-    titleLine2: "ひとつのプラットフォームで",
-    desc: "17のDockerサービスをすぐにデプロイ。",
-  },
-  zh: {
-    badge: "服务",
-    titleLine1: "服务器所需的一切，",
-    titleLine2: "一个平台搞定",
-    desc: "17个Docker服务即刻部署。",
-  },
-} as const;
+import { useDictionary } from "@/i18n/DictionaryContext";
 
 export default function Services() {
   const { locale } = useLocale();
-  const t = servicesDict[locale];
+  const { services: t } = useDictionary();
 
   return (
     <section className="services" id="services">

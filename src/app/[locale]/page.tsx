@@ -11,6 +11,7 @@ import Contact from "@/components/Contact";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 import type { Locale } from "@/i18n/types";
+import { getFaqDictionary } from "@/i18n/dictionaries";
 
 const faqSchemaData: Record<Locale, { q: string; a: string }[]> = {
   en: [
@@ -70,6 +71,7 @@ export default async function Home({
 }) {
   const { locale } = await params;
   const lang = (["en", "ko", "ja", "zh"].includes(locale) ? locale : "en") as Locale;
+  const faqDictData = await getFaqDictionary(lang);
 
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -99,7 +101,7 @@ export default async function Home({
         <HowItWorks />
         <Services />
         <InstallationManual />
-        <FAQ />
+        <FAQ dict={faqDictData} />
         <Contact />
         <Newsletter />
       </main>

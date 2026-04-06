@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useEffect, FormEvent } from "react";
-import { useLocale } from "@/i18n/useLocale";
-import { newsletterDict } from "@/i18n/dict/newsletter";
+import { useDictionary } from "@/i18n/DictionaryContext";
 
 type FormState = "idle" | "submitting" | "success" | "error";
 
@@ -10,8 +9,7 @@ export default function Newsletter() {
   const [email, setEmail] = useState("");
   const [state, setState] = useState<FormState>("idle");
   const [toast, setToast] = useState(false);
-  const { locale } = useLocale();
-  const t = newsletterDict[locale];
+  const { newsletter: t } = useDictionary();
 
   useEffect(() => {
     if (!toast) return;

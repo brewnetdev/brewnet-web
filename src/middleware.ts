@@ -1,29 +1,44 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { DEFAULT_LOCALE, LOCALE_COOKIE, isValidLocale } from "@/i18n/types";
+import { DEFAULT_LOCALE, LOCALE_COOKIE, LOCALES, isValidLocale } from "@/i18n/types";
+import type { Locale } from "@/i18n/types";
+
+function parseAcceptLanguage(header: string): Locale {
+  const entries = header.split(",").map((part) => {
+    const [lang, ...params] = part.trim().split(";");
+    const qParam = params.find((p) => p.trim().startsWith("q="));
+    const q = qParam ? parseFloat(qParam.trim().slice(2)) : 1;
+    return { lang: lang.trim().toLowerCase(), q };
+  });
+
+  entries.sort((a, b) => b.q - a.q);
+
+  for (const { lang } of entries) {
+    const prefix = lang.split("-")[0];
+    if (LOCALES.includes(prefix as Locale)) {
+      return prefix as Locale;
+    }
+  }
+
+  return DEFAULT_LOCALE;
+}
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Check if pathname already starts with a valid locale
   const firstSegment = pathname.split("/")[1];
   if (isValidLocale(firstSegment)) {
     return NextResponse.next();
   }
 
-  // Detect preferred locale: cookie → Accept-Language → default
-  let detected = DEFAULT_LOCALE;
+  let detected: Locale = DEFAULT_LOCALE;
 
   const cookieLocale = request.cookies.get(LOCALE_COOKIE)?.value;
   if (cookieLocale && isValidLocale(cookieLocale)) {
     detected = cookieLocale;
   } else {
-    const acceptLang = request.headers.get("accept-language") ?? "";
-    if (acceptLang.includes("ko")) {
-      detected = "ko";
-    } else if (acceptLang.includes("ja")) {
-      detected = "ja";
-    } else if (acceptLang.includes("zh")) {
-      detected = "zh";
+    const acceptLang = request.headers.get("accept-language");
+    if (acceptLang) {
+      detected = parseAcceptLanguage(acceptLang);
     }
   }
 

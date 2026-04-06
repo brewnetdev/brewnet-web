@@ -1,12 +1,10 @@
 "use client";
 
-import { useLocale } from "@/i18n/useLocale";
-import { heroDict } from "@/i18n/dict/hero";
+import { useDictionary } from "@/i18n/DictionaryContext";
 import TerminalAnimation from "./TerminalAnimation";
 
 export default function Hero() {
-  const { locale } = useLocale();
-  const t = heroDict[locale];
+  const { hero: t } = useDictionary();
 
   return (
     <section className="hero">

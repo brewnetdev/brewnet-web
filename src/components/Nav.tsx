@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { useLocale } from "@/i18n/useLocale";
 import { LOCALE_COOKIE, LOCALES, type Locale } from "@/i18n/types";
+import { useDictionary } from "@/i18n/DictionaryContext";
 
 const LOCALE_LABELS: Record<Locale, string> = {
   en: "EN",
@@ -23,6 +24,7 @@ export default function Nav() {
   const { locale } = useLocale();
   const pathname = usePathname();
   const router = useRouter();
+  const { nav: t } = useDictionary();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -70,12 +72,12 @@ export default function Nav() {
   };
 
   const navLinks = [
-    { href: "#features", label: "Features" },
-    { href: "#how-it-works", label: "Usage" },
-    { href: "#services", label: "Services" },
-    { href: "#install-guide", label: "Install" },
-    { href: "#faq", label: "FAQ" },
-    { href: "#contact", label: "Contact" },
+    { href: "#features", label: t.features },
+    { href: "#how-it-works", label: t.usage },
+    { href: "#services", label: t.services },
+    { href: "#install-guide", label: t.install },
+    { href: "#faq", label: t.faq },
+    { href: "#contact", label: t.contact },
   ];
 
   return (
@@ -116,7 +118,7 @@ export default function Nav() {
             <button
               className="locale-toggle"
               onClick={() => setLocaleOpen(!localeOpen)}
-              aria-label="Change language"
+              aria-label={t.changeLanguage}
               aria-expanded={localeOpen}
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -158,7 +160,7 @@ export default function Nav() {
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
             </svg>
-            Star
+            {t.star}
             {starCount !== null && <span className="star-count">{starCount}</span>}
           </a>
           <a
@@ -166,12 +168,12 @@ export default function Nav() {
             className="btn btn-sm btn-outline"
             onClick={(e) => handleAnchorClick(e, "#system-requirements")}
           >
-            Get Started
+            {t.getStarted}
           </a>
           <button
             className="nav-toggle"
             id="navToggle"
-            aria-label="Toggle navigation"
+            aria-label={t.toggleNav}
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen(!mobileOpen)}
           >

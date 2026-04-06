@@ -1,11 +1,9 @@
 "use client";
 
-import { useLocale } from "@/i18n/useLocale";
-import { painPointsDict } from "@/i18n/dict/pain-points";
+import { useDictionary } from "@/i18n/DictionaryContext";
 
 export default function PainPoints() {
-  const { locale } = useLocale();
-  const t = painPointsDict[locale];
+  const { painPoints: t } = useDictionary();
 
   const icons = [
     (

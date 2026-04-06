@@ -1,11 +1,9 @@
 "use client";
 
-import { useLocale } from "@/i18n/useLocale";
-import { statsDict } from "@/i18n/dict/stats";
+import { useDictionary } from "@/i18n/DictionaryContext";
 
 export default function Stats() {
-  const { locale } = useLocale();
-  const t = statsDict[locale];
+  const { stats: t } = useDictionary();
 
   return (
     <section className="stats">

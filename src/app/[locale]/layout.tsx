@@ -3,6 +3,7 @@ import Script from "next/script";
 import { JetBrains_Mono } from "next/font/google";
 import Providers from "../Providers";
 import { LOCALES, type Locale } from "@/i18n/types";
+import { getDictionary } from "@/i18n/dictionaries";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -172,6 +173,7 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
   const lang = (LOCALES.includes(locale as Locale) ? locale : "en") as Locale;
+  const dictionary = await getDictionary(lang);
 
   return (
     <html lang={lang}>
@@ -201,7 +203,7 @@ export default async function LocaleLayout({
         />
       </head>
       <body className={jetbrainsMono.variable}>
-        <Providers locale={lang}>{children}</Providers>
+        <Providers locale={lang} dictionary={dictionary}>{children}</Providers>
       </body>
     </html>
   );

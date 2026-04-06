@@ -2,53 +2,11 @@
 
 import { catalogItems } from "@/data/catalog";
 import { useLocale } from "@/i18n/useLocale";
-
-const catalogDict = {
-  en: {
-    title: "Complete Service Catalog",
-    desc: "All 17 Docker services with images, ports, and resource requirements.",
-    thCategory: "Category",
-    thService: "Service",
-    thImage: "Docker Image",
-    thPorts: "Ports",
-    thRam: "RAM",
-    note: "Note: SQLite is an embedded DB (no Docker container). pgAdmin is shown only when PostgreSQL is selected.",
-  },
-  ko: {
-    title: "전체 서비스 카탈로그",
-    desc: "17개 Docker 서비스의 이미지, 포트, 리소스 요구사항 전체 목록입니다.",
-    thCategory: "카테고리",
-    thService: "서비스",
-    thImage: "Docker 이미지",
-    thPorts: "포트",
-    thRam: "RAM",
-    note: "참고: SQLite는 내장 DB입니다 (Docker 컨테이너 없음). pgAdmin은 PostgreSQL 선택 시에만 표시됩니다.",
-  },
-  ja: {
-    title: "全サービスカタログ",
-    desc: "17のDockerサービスのイメージ、ポート、リソース要件の完全リスト。",
-    thCategory: "カテゴリ",
-    thService: "サービス",
-    thImage: "Dockerイメージ",
-    thPorts: "ポート",
-    thRam: "RAM",
-    note: "注: SQLiteは組み込みDBです（Dockerコンテナなし）。pgAdminはPostgreSQL選択時のみ表示されます。",
-  },
-  zh: {
-    title: "完整服务目录",
-    desc: "17个Docker服务的镜像、端口和资源需求完整列表。",
-    thCategory: "类别",
-    thService: "服务",
-    thImage: "Docker镜像",
-    thPorts: "端口",
-    thRam: "RAM",
-    note: "注：SQLite是嵌入式数据库（无Docker容器）。pgAdmin仅在选择PostgreSQL时显示。",
-  },
-} as const;
+import { useDictionary } from "@/i18n/DictionaryContext";
 
 export default function ServerCatalog() {
   const { locale } = useLocale();
-  const t = catalogDict[locale];
+  const { catalog: t } = useDictionary();
 
   return (
     <div className="commands-section" style={{ marginTop: 48 }}>

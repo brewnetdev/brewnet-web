@@ -1,11 +1,9 @@
 "use client";
 
-import { useLocale } from "@/i18n/useLocale";
-import { finalCtaDict } from "@/i18n/dict/final-cta";
+import { useDictionary } from "@/i18n/DictionaryContext";
 
 export default function FinalCTA() {
-  const { locale } = useLocale();
-  const t = finalCtaDict[locale];
+  const { finalCta: t } = useDictionary();
 
   return (
     <section className="final-cta">
