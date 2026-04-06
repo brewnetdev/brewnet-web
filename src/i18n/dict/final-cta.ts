@@ -27,4 +27,20 @@ export const finalCtaDict: Record<
     btnGitHub: "View on GitHub",
     note: "Brewnet은 Apache 2.0 라이선스이며 깔끔한 제거를 지원합니다. 자유롭게 사용하고, 더 이상 필요하지 않으면 흔적 없이 완전히 제거할 수 있습니다.",
   },
+  ja: {
+    titlePrefix: "",
+    titleHighlight: "サーバーをbrewする準備はできましたか？",
+    desc: "コマンドひとつで、サーバースタック丸ごと。クレジットカード不要、ロックインなし。",
+    btnGetStarted: "Get Started Free",
+    btnGitHub: "View on GitHub",
+    note: "BrewnetはApache 2.0ライセンスで、クリーンアンインストールに対応しています。自由に使い、不要になったら痕跡を残さず完全に削除できます。",
+  },
+  zh: {
+    titlePrefix: "准备好",
+    titleHighlight: "brew你的服务器了吗？",
+    desc: "一条命令，完整服务器栈。无需信用卡，无锁定。",
+    btnGetStarted: "Get Started Free",
+    btnGitHub: "View on GitHub",
+    note: "Brewnet采用Apache 2.0许可证，支持干净卸载。自由使用，不再需要时可完全移除，不留痕迹。",
+  },
 };

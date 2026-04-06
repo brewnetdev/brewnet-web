@@ -24,6 +24,26 @@ const catalogDict = {
     thRam: "RAM",
     note: "참고: SQLite는 내장 DB입니다 (Docker 컨테이너 없음). pgAdmin은 PostgreSQL 선택 시에만 표시됩니다.",
   },
+  ja: {
+    title: "全サービスカタログ",
+    desc: "17のDockerサービスのイメージ、ポート、リソース要件の完全リスト。",
+    thCategory: "カテゴリ",
+    thService: "サービス",
+    thImage: "Dockerイメージ",
+    thPorts: "ポート",
+    thRam: "RAM",
+    note: "注: SQLiteは組み込みDBです（Dockerコンテナなし）。pgAdminはPostgreSQL選択時のみ表示されます。",
+  },
+  zh: {
+    title: "完整服务目录",
+    desc: "17个Docker服务的镜像、端口和资源需求完整列表。",
+    thCategory: "类别",
+    thService: "服务",
+    thImage: "Docker镜像",
+    thPorts: "端口",
+    thRam: "RAM",
+    note: "注：SQLite是嵌入式数据库（无Docker容器）。pgAdmin仅在选择PostgreSQL时显示。",
+  },
 } as const;
 
 export default function ServerCatalog() {

@@ -52,7 +52,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {locale === "ko" ? "Bug 신고" : "Report Bug"}
+              {{ en: "Report Bug", ko: "Bug 신고", ja: "バグ報告", zh: "报告Bug" }[locale]}
             </a>
           </div>
         </div>

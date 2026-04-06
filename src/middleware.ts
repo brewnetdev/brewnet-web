@@ -20,6 +20,10 @@ export function middleware(request: NextRequest) {
     const acceptLang = request.headers.get("accept-language") ?? "";
     if (acceptLang.includes("ko")) {
       detected = "ko";
+    } else if (acceptLang.includes("ja")) {
+      detected = "ja";
+    } else if (acceptLang.includes("zh")) {
+      detected = "zh";
     }
   }
 

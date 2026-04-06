@@ -70,4 +70,58 @@ export const howItWorksDict: Record<
       },
     ],
   },
+  ja: {
+    badge: "使い方",
+    title: "簡単3ステップで",
+    titleHighlight: "すぐに始めましょう",
+    subtitle: "インストールからサーバー起動まで、CLIウィザードがすべて処理します。",
+    commandsTitle: "CLIコマンド",
+    steps: [
+      {
+        number: "01",
+        title: "Brewnetをインストール",
+        desc: "curl（推奨）またはnpmでインストール。Node.js 20+とDocker 27+が必要です。macOS 12+およびUbuntu 20.04+に対応。",
+        code: "curl -fsSL https://raw.githubusercontent.com/claude-code-expert/brewnet/main/install.sh | bash",
+      },
+      {
+        number: "02",
+        title: "ウィザードを実行",
+        desc: "対話式7ステップウィザードが案内します：システムチェック、プロジェクト設定、管理者アカウント＆サーバー構成、開発スタック＆ランタイム、ドメイン＆ネットワーク、確認、生成＆デプロイ。",
+        code: "brewnet init",
+      },
+      {
+        number: "03",
+        title: "サービスを管理",
+        desc: "簡単なコマンドでサービスの追加、削除、開始、停止、モニタリング。ログ確認、ドメイン管理、アプリデプロイも可能。",
+        code: "brewnet status",
+      },
+    ],
+  },
+  zh: {
+    badge: "使用方法",
+    title: "简单3步",
+    titleHighlight: "立即开始",
+    subtitle: "从安装到服务器运行，CLI向导处理一切。",
+    commandsTitle: "CLI命令",
+    steps: [
+      {
+        number: "01",
+        title: "安装Brewnet",
+        desc: "通过curl（推荐）或npm安装。需要Node.js 20+和Docker 27+。支持macOS 12+和Ubuntu 20.04+。",
+        code: "curl -fsSL https://raw.githubusercontent.com/claude-code-expert/brewnet/main/install.sh | bash",
+      },
+      {
+        number: "02",
+        title: "运行向导",
+        desc: "交互式7步向导引导您完成：系统检查、项目设置、管理员账户和服务器组件、开发栈和运行时、域名和网络、审查、生成和部署。",
+        code: "brewnet init",
+      },
+      {
+        number: "03",
+        title: "管理服务",
+        desc: "用简单命令添加、删除、启动、停止和监控服务。查看日志、管理域名、部署应用。",
+        code: "brewnet status",
+      },
+    ],
+  },
 };

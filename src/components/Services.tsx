@@ -16,6 +16,18 @@ const servicesDict = {
     titleLine2: "하나의 플랫폼에서",
     desc: "17개 Docker 서비스를 바로 배포하세요.",
   },
+  ja: {
+    badge: "サービス",
+    titleLine1: "サーバーに必要なすべてを、",
+    titleLine2: "ひとつのプラットフォームで",
+    desc: "17のDockerサービスをすぐにデプロイ。",
+  },
+  zh: {
+    badge: "服务",
+    titleLine1: "服务器所需的一切，",
+    titleLine2: "一个平台搞定",
+    desc: "17个Docker服务即刻部署。",
+  },
 } as const;
 
 export default function Services() {

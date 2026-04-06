@@ -113,4 +113,94 @@ export const featuresDict: Record<
       },
     },
   },
+  ja: {
+    badge: "主な機能",
+    title: "セルフホスティングに必要な",
+    titleHighlight: "すべてをひとつに",
+    subtitle: "クラウドホスティング費用はもう不要。コマンドひとつでデプロイ。",
+    subtitle2: "ドメイン接続、ビルド、デプロイを一度に。",
+    cards: {
+      oneClickServerStack: {
+        title: "ワンクリックサーバースタック",
+        desc: "Go, Java, Kotlin, Node, Python, Rust, React — ランタイムを選んでコマンドひとつでプロダクション対応Webサーバーを起動。手動の依存関係設定もバージョン競合もなし。",
+      },
+      secureByDefault: {
+        title: "デフォルトで安全",
+        desc: "SSH鍵認証のみ、rootログイン無効化、自動ファイアウォール設定、全サービスにわたる暗号化された認証情報伝播。",
+      },
+      cleanUninstall: {
+        title: "クリーンアンインストール＆ロールバック",
+        desc: "すべての変更を追跡。実行前に--dry-runで削除対象をプレビュー。完全なバックアップ＆リストア、ワンコマンドロールバック、アンインストール後にコンテナ・ボリューム・設定の残骸なし。",
+      },
+      cloudflareTunnel: {
+        title: "Cloudflare Tunnel連携",
+        desc: "ポートフォワーディング不要。NAT/CGNAT環境でも自動HTTPSとDDoS保護。Cloudflareトークンを貼り付けるだけでトンネル、インバウンドルール、DNSが自動設定。",
+      },
+      dockerOrchestration: {
+        title: "Dockerオーケストレーション",
+        desc: "最大17サービスに対して完全なコンテナ分離でdocker-compose.ymlを自動生成。各サービスは独自のネットワークサンドボックスで依存関係の順序付け、ヘルスチェック、安全な認証情報伝播と共に実行。",
+      },
+      slackTelegram: {
+        title: "Slack & Telegram通知",
+        desc: "サービスステータス、デプロイ、エラーのリアルタイムアラートをSlackまたはTelegramで直接受信。データベース不要。Webhook URLまたはボットトークンを貼り付けるだけで通知開始。",
+      },
+      buildDeployConnect: {
+        title: "ビルド、デプロイ＆接続",
+        desc: "サーバー設定は始まりにすぎません。アプリ実行、カスタムドメイン接続、ビルド自動化、ワンコマンドデプロイ、全体モニタリング — DevOpsチームなしで完全なDevOpsライフサイクル。",
+      },
+      crossPlatform: {
+        title: "クロスプラットフォーム対応",
+        desc: "macOS 12+およびUbuntu 20.04+を公式サポート。BrewnetがOSを自動検出し、パッケージマネージャーを調整、プラットフォーム固有の違いを処理。",
+      },
+      webDashboard: {
+        title: "Webダッシュボード＆モニタリング",
+        desc: "ブラウザベースのセットアップウィザード、リアルタイムサービスモニタリング、Webターミナル、サーバースタック全体を管理するビジュアルインターフェース。",
+      },
+    },
+  },
+  zh: {
+    badge: "主要功能",
+    title: "自托管所需的",
+    titleHighlight: "一切尽在此处",
+    subtitle: "不再支付云托管费用。一条命令完成部署。",
+    subtitle2: "域名连接、构建、部署一步到位。",
+    cards: {
+      oneClickServerStack: {
+        title: "一键服务器栈",
+        desc: "Go, Java, Kotlin, Node, Python, Rust, React — 选择运行时，一条命令启动生产级Web服务器。无需手动依赖设置，无版本冲突。",
+      },
+      secureByDefault: {
+        title: "默认安全",
+        desc: "仅SSH密钥认证、禁用root登录、自动防火墙配置、所有服务间加密凭证传播。",
+      },
+      cleanUninstall: {
+        title: "干净卸载 & 回滚",
+        desc: "每次更改都被跟踪。执行前用--dry-run预览删除内容。完整备份恢复、一键回滚，卸载后无残留容器、卷或配置。",
+      },
+      cloudflareTunnel: {
+        title: "Cloudflare Tunnel集成",
+        desc: "无需端口转发。在NAT/CGNAT环境下也能自动HTTPS和DDoS防护。粘贴一个Cloudflare令牌，隧道、入口规则和DNS自动配置。",
+      },
+      dockerOrchestration: {
+        title: "Docker编排",
+        desc: "为最多17个服务自动生成docker-compose.yml，完全容器隔离。每个服务在独立的网络沙箱中运行，具有依赖排序、健康检查和安全凭证传播。",
+      },
+      slackTelegram: {
+        title: "Slack & Telegram通知",
+        desc: "直接在Slack或Telegram接收服务状态、部署和错误的实时警报。无需数据库。只需粘贴Webhook URL或机器人令牌即可开始接收通知。",
+      },
+      buildDeployConnect: {
+        title: "构建、部署 & 连接",
+        desc: "服务器设置只是开始。运行应用、连接自定义域名、自动化构建、一键部署、全面监控 — 无需DevOps团队的完整DevOps生命周期。",
+      },
+      crossPlatform: {
+        title: "跨平台支持",
+        desc: "官方支持macOS 12+和Ubuntu 20.04+。Brewnet自动检测操作系统、调整包管理器、处理平台特定差异。",
+      },
+      webDashboard: {
+        title: "Web仪表盘 & 监控",
+        desc: "基于浏览器的设置向导、实时服务监控、Web终端，以及管理整个服务器栈的可视化界面。",
+      },
+    },
+  },
 };

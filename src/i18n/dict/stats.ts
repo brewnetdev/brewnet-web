@@ -22,4 +22,20 @@ export const statsDict: Record<
       { value: "100%", label: "오픈소스 CLI + Dashboard" },
     ],
   },
+  ja: {
+    stats: [
+      { value: "17", label: "Docker完全分離アプリ＆クリーンアンインストール" },
+      { value: "6+16", label: "対応言語＆フレームワークランタイム" },
+      { value: "3", label: "インストールからドメイン接続まで3ステップ" },
+      { value: "100%", label: "オープンソース CLI + Dashboard" },
+    ],
+  },
+  zh: {
+    stats: [
+      { value: "17", label: "Docker完全隔离应用 & 干净卸载" },
+      { value: "6+16", label: "支持语言及框架运行时" },
+      { value: "3", label: "从安装到域名连接仅需3步" },
+      { value: "100%", label: "开源 CLI + Dashboard" },
+    ],
+  },
 };

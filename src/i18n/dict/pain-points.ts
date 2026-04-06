@@ -59,4 +59,50 @@ export const painPointsDict: Record<
       },
     ],
   },
+  ja: {
+    sectionBadge: "課題",
+    sectionTitleLine1: "セルフホスティングが",
+    sectionTitleLine2: "こんなに大変である必要はありません",
+    sectionDescPrefix: "複雑なホスティング設定。予測できないコスト。",
+    sectionDescHighlight: "Brewnetが解決します。",
+    sectionDesc2: "Webサーバー、Git、DB、メディア＆ファイルサーバー — すべて含まれています。コスト：¥0。簡単セットアップウィザード、1分でドメイン接続！データ収集なし。",
+    sectionDesc3: "",
+    pains: [
+      {
+        title: "ランタイム設定は悪夢",
+        desc: "Go, Java, Kotlin, Node, Python, Rust, React \u2014 各ランタイムごとに独自のバージョンマネージャー、依存関係、競合があります。Brewnetは完全な分離環境でワンクリックですべて解決します。",
+      },
+      {
+        title: "セキュリティは後回し",
+        desc: "SSH強化、ファイアウォールルール、SSL証明書、認証情報管理 \u2014 ほとんどのクラウドセットアップは複雑です。BrewnetはCloudflare Tunnelですべてのセキュリティ問題を一度に解決します。",
+      },
+      {
+        title: "きれいに削除する方法がない",
+        desc: "ほとんどのクラウドプラットフォームは、何度削除しても完全にクリーンアップするのが困難です。Brewnetは brewnet uninstall 一発ですべて削除。設定ファイル、コンテナ、ボリュームの残骸なし。",
+      },
+    ],
+  },
+  zh: {
+    sectionBadge: "痛点",
+    sectionTitleLine1: "自托管不应该",
+    sectionTitleLine2: "如此痛苦",
+    sectionDescPrefix: "复杂的托管设置。不可预测的成本。",
+    sectionDescHighlight: "Brewnet来解决。",
+    sectionDesc2: "Web服务器、Git、数据库、媒体和文件服务器 — 全部包含。成本：¥0。简单设置向导，1分钟连接域名！不收集任何数据。",
+    sectionDesc3: "",
+    pains: [
+      {
+        title: "运行时设置是噩梦",
+        desc: "Go, Java, Kotlin, Node, Python, Rust, React \u2014 每个运行时都有自己的版本管理器、依赖项和冲突。Brewnet在完全隔离的环境中一键解决所有问题。",
+      },
+      {
+        title: "安全总是被忽视",
+        desc: "SSH加固、防火墙规则、SSL证书、凭证管理 \u2014 大多数云设置都很复杂。Brewnet通过Cloudflare Tunnel一次性解决所有安全问题。",
+      },
+      {
+        title: "没有干净的删除方式",
+        desc: "大多数云平台即使经过多步删除也难以彻底清理。Brewnet只需 brewnet uninstall 一条命令即可干净删除。无残留配置文件、容器或卷。",
+      },
+    ],
+  },
 };
