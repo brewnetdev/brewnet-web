@@ -202,10 +202,13 @@ img { max-width: 100%; display: block; }
   align-items: center;
   gap: 12px;
 }
+.locale-selector {
+  position: relative;
+}
 .locale-toggle {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
   padding: 5px 10px;
   background: transparent;
   border: 1px solid var(--border);
@@ -220,13 +223,47 @@ img { max-width: 100%; display: block; }
 .locale-toggle:hover {
   border-color: var(--border-light);
 }
-.locale-toggle .active {
+.locale-chevron {
+  transition: transform 0.2s;
+}
+.locale-chevron.open {
+  transform: rotate(180deg);
+}
+.locale-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  list-style: none;
+  margin: 0;
+  padding: 4px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  min-width: 64px;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.locale-option {
+  display: block;
+  width: 100%;
+  padding: 6px 12px;
+  background: none;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-family: inherit;
+  color: var(--text-muted);
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.15s, color 0.15s;
+}
+.locale-option:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+}
+.locale-option.active {
   color: var(--primary);
   font-weight: 600;
-}
-.locale-divider {
-  color: var(--border-light);
-  font-weight: 300;
 }
 .github-star-btn {
   display: inline-flex;

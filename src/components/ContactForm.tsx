@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, FormEvent } from "react";
-import { useLocale } from "@/i18n/useLocale";
-import { contactDict } from "@/i18n/dict/contact";
+import { useDictionary } from "@/i18n/DictionaryContext";
 
 type FormState = "idle" | "submitting" | "success" | "error";
 
@@ -10,8 +9,7 @@ export default function ContactForm() {
   const [state, setState] = useState<FormState>("idle");
   const [toast, setToast] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
-  const { locale } = useLocale();
-  const t = contactDict[locale];
+  const { contact: t } = useDictionary();
 
   useEffect(() => {
     if (!toast) return;

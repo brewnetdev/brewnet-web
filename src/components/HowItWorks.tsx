@@ -3,11 +3,11 @@
 import CopyButton from "./CopyButton";
 import { cliCommands } from "@/data/commands";
 import { useLocale } from "@/i18n/useLocale";
-import { howItWorksDict } from "@/i18n/dict/how-it-works";
+import { useDictionary } from "@/i18n/DictionaryContext";
 
 export default function HowItWorks() {
   const { locale } = useLocale();
-  const t = howItWorksDict[locale];
+  const { howItWorks: t } = useDictionary();
 
   return (
     <section className="how-it-works" id="how-it-works">

@@ -3,6 +3,7 @@ import Script from "next/script";
 import { JetBrains_Mono } from "next/font/google";
 import Providers from "../Providers";
 import { LOCALES, type Locale } from "@/i18n/types";
+import { getDictionary } from "@/i18n/dictionaries";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -13,14 +14,18 @@ const jetbrainsMono = JetBrains_Mono({
 
 const siteUrl = "https://www.brewnet.dev";
 
-const descriptions = {
+const descriptions: Record<Locale, string> = {
   en: "Open-source self-hosted home server platform. One CLI command to deploy 17 Docker services — Gitea, Nginx, Jellyfin, PostgreSQL, Nextcloud, Grafana and more. Free, no cloud subscription.",
   ko: "오픈소스 셀프호스팅 홈서버 플랫폼. CLI 명령어 하나로 17개 Docker 서비스 배포 — Gitea, Nginx, Jellyfin, PostgreSQL, Nextcloud, Grafana 등. 무료, 클라우드 구독 없음.",
+  ja: "オープンソースのセルフホスティング型ホームサーバープラットフォーム。CLIコマンド1つで17のDockerサービスをデプロイ — Gitea、Nginx、Jellyfin、PostgreSQL、Nextcloud、Grafanaなど。無料、クラウドサブスクリプション不要。",
+  zh: "开源自托管家庭服务器平台。一条CLI命令部署17个Docker服务 — Gitea、Nginx、Jellyfin、PostgreSQL、Nextcloud、Grafana等。免费，无需云订阅。",
 };
 
-const titles = {
+const titles: Record<Locale, string> = {
   en: "Brewnet — Open Source Home Server Management CLI",
   ko: "Brewnet — 오픈소스 홈서버 관리 CLI",
+  ja: "Brewnet — オープンソース ホームサーバー管理CLI",
+  zh: "Brewnet — 开源家庭服务器管理CLI",
 };
 
 type Props = { params: Promise<{ locale: string }> };
@@ -31,7 +36,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const lang = (locale === "ko" ? "ko" : "en") as Locale;
+  const lang = (LOCALES.includes(locale as Locale) ? locale : "en") as Locale;
   const title = titles[lang];
   const description = descriptions[lang];
 
@@ -54,6 +59,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       "셀프호스팅",
       "도커",
       "서버 관리",
+      "ホームサーバー",
+      "セルフホスティング",
+      "家庭服务器",
+      "自托管",
     ],
     icons: {
       icon: [
@@ -68,6 +77,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       languages: {
         en: "/en",
         ko: "/ko",
+        ja: "/ja",
+        zh: "/zh",
         "x-default": "/en",
       },
     },
@@ -88,8 +99,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `${siteUrl}/${lang}`,
       siteName: "Brewnet",
       type: "website",
-      locale: lang === "ko" ? "ko_KR" : "en_US",
-      alternateLocale: lang === "ko" ? "en_US" : "ko_KR",
+      locale: ({ en: "en_US", ko: "ko_KR", ja: "ja_JP", zh: "zh_CN" } as const)[lang],
+      alternateLocale: (["en_US", "ko_KR", "ja_JP", "zh_CN"] as const).filter(
+        (l) => l !== ({ en: "en_US", ko: "ko_KR", ja: "ja_JP", zh: "zh_CN" } as const)[lang]
+      ),
       images: [
         {
           url: `${siteUrl}/opengraph-image`,
@@ -159,7 +172,8 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const lang = (locale === "ko" ? "ko" : "en") as Locale;
+  const lang = (LOCALES.includes(locale as Locale) ? locale : "en") as Locale;
+  const dictionary = await getDictionary(lang);
 
   return (
     <html lang={lang}>
@@ -189,7 +203,7 @@ export default async function LocaleLayout({
         />
       </head>
       <body className={jetbrainsMono.variable}>
-        <Providers locale={lang}>{children}</Providers>
+        <Providers locale={lang} dictionary={dictionary}>{children}</Providers>
       </body>
     </html>
   );

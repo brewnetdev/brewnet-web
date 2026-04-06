@@ -1,11 +1,9 @@
 "use client";
 
-import { useLocale } from "@/i18n/useLocale";
-import { featuresDict } from "@/i18n/dict/features";
+import { useDictionary } from "@/i18n/DictionaryContext";
 
 export default function Features() {
-  const { locale } = useLocale();
-  const t = featuresDict[locale];
+  const { features: t } = useDictionary();
 
   const features = [
     {

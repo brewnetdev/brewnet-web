@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { useDictionary } from "@/i18n/DictionaryContext";
 
 export default function CopyButton({ code }: { code: string }) {
   const [copied, setCopied] = useState(false);
+  const { common: t } = useDictionary();
 
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
@@ -12,7 +14,7 @@ export default function CopyButton({ code }: { code: string }) {
   };
 
   return (
-    <button className="copy-btn" onClick={handleCopy} aria-label={copied ? "Copied!" : "Copy"}>
+    <button className="copy-btn" onClick={handleCopy} aria-label={copied ? t.copied : t.copy}>
       {copied ? (
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
           <polyline points="20 6 9 17 4 12" />

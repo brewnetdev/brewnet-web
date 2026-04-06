@@ -3,17 +3,28 @@
 import { useEffect, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { useLocale } from "@/i18n/useLocale";
-import { LOCALE_COOKIE } from "@/i18n/types";
+import { LOCALE_COOKIE, LOCALES, type Locale } from "@/i18n/types";
+import { useDictionary } from "@/i18n/DictionaryContext";
+
+const LOCALE_LABELS: Record<Locale, string> = {
+  en: "EN",
+  ko: "KO",
+  ja: "JA",
+  zh: "ZH",
+};
 
 
 export default function Nav() {
   const navRef = useRef<HTMLElement>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [localeOpen, setLocaleOpen] = useState(false);
   const [starCount, setStarCount] = useState<number | null>(null);
   const wasScrolled = useRef(false);
+  const localeRef = useRef<HTMLDivElement>(null);
   const { locale } = useLocale();
   const pathname = usePathname();
   const router = useRouter();
+  const { nav: t } = useDictionary();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,6 +36,16 @@ export default function Nav() {
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (localeRef.current && !localeRef.current.contains(e.target as Node)) {
+        setLocaleOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   useEffect(() => {
@@ -51,12 +72,12 @@ export default function Nav() {
   };
 
   const navLinks = [
-    { href: "#features", label: "Features" },
-    { href: "#how-it-works", label: "Usage" },
-    { href: "#services", label: "Services" },
-    { href: "#install-guide", label: "Install" },
-    { href: "#faq", label: "FAQ" },
-    { href: "#contact", label: "Contact" },
+    { href: "#features", label: t.features },
+    { href: "#how-it-works", label: t.usage },
+    { href: "#services", label: t.services },
+    { href: "#install-guide", label: t.install },
+    { href: "#faq", label: t.faq },
+    { href: "#contact", label: t.contact },
   ];
 
   return (
@@ -93,20 +114,43 @@ export default function Nav() {
           ))}
         </ul>
         <div className="nav-actions">
-          <button
-            className="locale-toggle"
-            onClick={() => {
-              const target = locale === "en" ? "ko" : "en";
-              const newPath = pathname.replace(/^\/(en|ko)/, `/${target}`);
-              document.cookie = `${LOCALE_COOKIE}=${target};path=/;max-age=31536000`;
-              router.push(newPath);
-            }}
-            aria-label={locale === "en" ? "Switch to Korean" : "영어로 전환"}
-          >
-            <span className={locale === "en" ? "active" : ""}>EN</span>
-            <span className="locale-divider">|</span>
-            <span className={locale === "ko" ? "active" : ""}>KO</span>
-          </button>
+          <div className="locale-selector" ref={localeRef}>
+            <button
+              className="locale-toggle"
+              onClick={() => setLocaleOpen(!localeOpen)}
+              aria-label={t.changeLanguage}
+              aria-expanded={localeOpen}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M2 12h20" />
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+              </svg>
+              {LOCALE_LABELS[locale]}
+              <svg className={`locale-chevron${localeOpen ? " open" : ""}`} width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            {localeOpen && (
+              <ul className="locale-dropdown">
+                {LOCALES.map((l) => (
+                  <li key={l}>
+                    <button
+                      className={`locale-option${l === locale ? " active" : ""}`}
+                      onClick={() => {
+                        const newPath = pathname.replace(/^\/(en|ko|ja|zh)/, `/${l}`);
+                        document.cookie = `${LOCALE_COOKIE}=${l};path=/;max-age=31536000`;
+                        router.push(newPath);
+                        setLocaleOpen(false);
+                      }}
+                    >
+                      {LOCALE_LABELS[l]}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
           <a
             href="https://github.com/claude-code-expert/brewnet"
             className="github-star-btn"
@@ -116,7 +160,7 @@ export default function Nav() {
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
             </svg>
-            Star
+            {t.star}
             {starCount !== null && <span className="star-count">{starCount}</span>}
           </a>
           <a
@@ -124,12 +168,12 @@ export default function Nav() {
             className="btn btn-sm btn-outline"
             onClick={(e) => handleAnchorClick(e, "#system-requirements")}
           >
-            Get Started
+            {t.getStarted}
           </a>
           <button
             className="nav-toggle"
             id="navToggle"
-            aria-label="Toggle navigation"
+            aria-label={t.toggleNav}
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen(!mobileOpen)}
           >

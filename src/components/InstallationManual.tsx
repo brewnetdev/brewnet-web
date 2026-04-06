@@ -2,12 +2,12 @@
 
 import CopyButton from "./CopyButton";
 import { wizardSteps } from "@/data/wizard-steps";
-import { installationDict } from "@/i18n/dict/installation";
+import { useDictionary } from "@/i18n/DictionaryContext";
 import { useLocale } from "@/i18n/useLocale";
 
 export default function InstallationManual() {
   const { locale } = useLocale();
-  const t = installationDict[locale];
+  const { installation: t } = useDictionary();
 
   return (
     <section className="how-it-works" id="install-guide">

@@ -1,9 +1,11 @@
 "use client";
 
 import { useLocale } from "@/i18n/useLocale";
+import { useDictionary } from "@/i18n/DictionaryContext";
 
 export default function Footer() {
   const { locale } = useLocale();
+  const { footer: t } = useDictionary();
   return (
     <footer className="footer">
       <div className="container">
@@ -20,9 +22,7 @@ export default function Footer() {
               </svg>
               Brewnet
             </span>
-            <span className="footer-copy">
-              {"\u00A9"} 2026 Brewnet (codevillain). All rights reserved.
-            </span>
+            <span className="footer-copy">{t.copyright}</span>
           </div>
           <div className="footer-links">
             <a
@@ -30,29 +30,29 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              GitHub
+              {t.github}
             </a>
             <a
               href="https://github.com/claude-code-expert/brewnet#readme"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Docs
+              {t.docs}
             </a>
             <a
               href="https://github.com/claude-code-expert/brewnet/blob/main/LICENSE"
               target="_blank"
               rel="noopener noreferrer"
             >
-              License (Apache 2.0)
+              {t.license}
             </a>
-            <a href={`/${locale}/privacy`}>Privacy</a>
+            <a href={`/${locale}/privacy`}>{t.privacy}</a>
             <a
               href="https://github.com/claude-code-expert/brewnet/issues"
               target="_blank"
               rel="noopener noreferrer"
             >
-              {locale === "ko" ? "Bug 신고" : "Report Bug"}
+              {t.reportBug}
             </a>
           </div>
         </div>

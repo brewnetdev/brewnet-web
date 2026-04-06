@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useLocale } from "@/i18n/useLocale";
-import { faqDict } from "@/i18n/dict/faq";
+import type { FAQDict } from "@/i18n/dictionaries/faq/en";
 
 interface FAQItem {
   q: string;
@@ -47,9 +46,8 @@ function FAQColumn({ title, items, columnKey }: { title: string; items: FAQItem[
   );
 }
 
-export default function FAQ() {
-  const { locale } = useLocale();
-  const t = faqDict[locale];
+export default function FAQ({ dict }: { dict: FAQDict }) {
+  const t = dict;
 
   return (
     <section className="faq" id="faq">
