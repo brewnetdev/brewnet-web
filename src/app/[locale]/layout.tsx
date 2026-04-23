@@ -93,6 +93,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         "max-snippet": -1,
       },
     },
+    verification: {
+      google: "QAqo-cKwoLn-xs7apsE4GPPvMHQJzTppdTge8_9f340",
+    },
     openGraph: {
       title,
       description,
